@@ -34,3 +34,5 @@ wp-content/themes/*
 !wp-content/themes/cappuccino/
 wp-content/themes/cappuccino/.DS_Store
 wp-content/themes/cappuccino/images/.DS_Store
+wp-content/themes/cappuccino/library/scss/.sass-cache
+wp-content/themes/cappuccino/library/css/*.map
