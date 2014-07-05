@@ -1501,15 +1501,11 @@ POSTS & CONTENT STYLES
   max-width: 100%;
   height: auto; }
 .entry-content code {
-  background: #eeeeee;
-  padding-left: 6.75px;
-  padding-left: 0.375rem;
-  padding-right: 6.75px;
-  padding-right: 0.375rem; }
-.entry-content pre {
-  font-size: 14.4px;
-  font-size: 0.8rem;
-  background: #eeeeee;
+  font-size: 15.3px;
+  font-size: 0.85rem; }
+.entry-content pre, .entry-content pre code {
+  font-size: 12.6px;
+  font-size: 0.7rem;
   padding-left: 13.5px;
   padding-left: 0.75rem;
   padding-right: 13.5px;
