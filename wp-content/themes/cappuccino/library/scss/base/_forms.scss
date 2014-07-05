@@ -1,0 +1,89 @@
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+
+.respond-form {
+
+	form {
+
+		li {
+			list-style-type: none;
+			margin: 0;
+
+			label,
+			small {
+				display: none;
+			}
+		}
+
+		input[type=text],
+		input[type=email],
+		input[type=url],
+		textarea {
+			@include rem-and-px(font-size, 0.8rem);
+			@include rem-and-px(padding, $half-spacing-unit);
+			color: $gray;
+			background: $light-gray;
+			border: 2px solid $gray;
+			width: 100%;
+
+			&:focus {
+				background: $light-gray;
+			}
+
+			/* form validation */
+			&:invalid {
+				outline: none;
+				border-color: #fbc2c4;
+				background-color: #f6e7eb;
+				-webkit-box-shadow: none;
+				   -moz-box-shadow: none;
+				    -ms-box-shadow: none;
+						box-shadow: none;
+			}
+		}
+
+		input[type=text],
+		input[type=email],
+		input[type=url] {
+		}
+
+		textarea {
+			resize: none;
+			margin-bottom: 0;
+			@include rem-and-px(margin-top, -($base-spacing-unit));			
+			@include rem-and-px(height, ($base-spacing-unit*5));
+		}
+
+	}
+}
+
+	/* comment submit button */
+	#submit { 
+		width: 100%;
+		@include rem-and-px(height, $base-spacing-unit*2);
+		@include rem-and-px(font-size, 1rem);
+		text-transform: uppercase;
+	}
+
+	/* comment form title */
+	#comment-form-title {}
+
+	/* cancel comment reply link */
+	#cancel-comment-reply {
+		a {}
+	}
+
+	/* logged in comments */
+	.comments-logged-in-as {}
+
+	/* allowed tags */
+	#allowed_tags {
+		margin-bottom: 0;
+		@extend h6;
+	}
+
+	/* no comments */
+	.nocomments {
+		margin: 0;
+	}

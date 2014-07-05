@@ -1,0 +1,271 @@
+@font-face {
+	font-family: 'cappuccino';
+	src:url('../fonts/cappuccino.eot');
+	src:url('../fonts/cappuccino.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/cappuccino.ttf') format('truetype'),
+		url('../fonts/cappuccino.woff') format('woff'),
+		url('../fonts/cappuccino.svg#cappuccino') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'cappuccino';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	//line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-quill:before {
+	content: "\e600";
+}
+.icon-home:before {
+	content: "\e601";
+}
+.icon-user:before {
+	content: "\e602";
+}
+.icon-lab:before {
+	content: "\e604";
+}
+.icon-fire:before {
+	content: "\e605";
+}
+.icon-bolt:before {
+	content: "\e606";
+}
+.icon-bookmark:before {
+	content: "\e607";
+}
+.icon-link:before {
+	content: "\e608";
+}
+.icon-shocked:before {
+	content: "\e609";
+}
+.icon-neutral:before {
+	content: "\e60a";
+}
+.icon-smiley:before {
+	content: "\e60b";
+}
+.icon-close:before {
+	content: "\e60c";
+}
+.icon-checkmark-full:before {
+	content: "\e60d";
+}
+.icon-minus:before {
+	content: "\e60e";
+}
+.icon-plus:before {
+	content: "\e60f";
+}
+.icon-embed:before {
+	content: "\e610";
+}
+.icon-code:before {
+	content: "\e611";
+}
+.icon-terminal:before {
+	content: "\e612";
+}
+.icon-instagram:before {
+	content: "\e613";
+}
+.icon-google-plus:before {
+	content: "\e614";
+}
+.icon-flickr:before {
+	content: "\e615";
+}
+.icon-dribbble:before {
+	content: "\e616";
+}
+.icon-forrst:before {
+	content: "\e617";
+}
+.icon-github:before {
+	content: "\e618";
+}
+.icon-wordpress:before {
+	content: "\e619";
+}
+.icon-linkedin:before {
+	content: "\e61a";
+}
+.icon-stackoverflow:before {
+	content: "\e61b";
+}
+.icon-pinterest:before {
+	content: "\e61c";
+}
+.icon-chrome:before {
+	content: "\e61d";
+}
+.icon-firefox:before {
+	content: "\e61e";
+}
+.icon-IE:before {
+	content: "\e61f";
+}
+.icon-opera:before {
+	content: "\e620";
+}
+.icon-safari:before {
+	content: "\e621";
+}
+.icon-file-pdf:before {
+	content: "\e622";
+}
+.icon-file-code:before {
+	content: "\e623";
+}
+.icon-twitter:before {
+	content: "\e624";
+}
+.icon-facebook:before {
+	content: "\e625";
+}
+.icon-vimeo:before {
+	content: "\e626";
+}
+.icon-rss:before {
+	content: "\e627";
+}
+.icon-coffee:before {
+	content: "\e628";
+}
+.icon-bubble:before {
+	content: "\e629";
+}
+.icon-tag:before {
+	content: "\e62a";
+}
+.icon-pencil:before {
+	content: "\e62b";
+}
+.icon-book:before {
+	content: "\e62c";
+}
+.icon-mobile:before {
+	content: "\e62d";
+}
+.icon-mobile2:before {
+	content: "\e62e";
+}
+.icon-tablet:before {
+	content: "\e62f";
+}
+.icon-desktop:before {
+	content: "\e630";
+}
+.icon-keyboard:before {
+	content: "\e631";
+}
+.icon-spinner:before {
+	content: "\e632";
+}
+.icon-search:before {
+	content: "\e633";
+}
+.icon-wand:before {
+	content: "\e634";
+}
+.icon-cloud:before {
+	content: "\e635";
+}
+.icon-play:before {
+	content: "\e636";
+}
+.icon-pause:before {
+	content: "\e637";
+}
+.icon-stop:before {
+	content: "\e638";
+}
+.icon-backward:before {
+	content: "\e639";
+}
+.icon-forward:before {
+	content: "\e63a";
+}
+.icon-arrow-up:before {
+	content: "\e63b";
+}
+.icon-arrow-right:before {
+	content: "\e63c";
+}
+.icon-arrow-down:before {
+	content: "\e63d";
+}
+.icon-arrow-left:before {
+	content: "\e63e";
+}
+.icon-foursquare:before {
+	content: "\e63f";
+}
+.icon-html5:before {
+	content: "\e640";
+}
+.icon-checkmark-empty:before {
+	content: "\e641";
+}
+.icon-bug:before {
+	content: "\e644";
+}
+.icon-cog:before {
+	content: "\e645";
+}
+.icon-mail:before {
+	content: "\e646";
+}
+.icon-sad:before {
+	content: "\e647";
+}
+.icon-meter:before {
+	content: "\e648";
+}
+.icon-headphones:before {
+	content: "\e649";
+}
+.icon-music:before {
+	content: "\e64a";
+}
+.icon-share:before {
+	content: "\e64b";
+}
+.icon-tumblr:before {
+	content: "\e64c";
+}
+.icon-android:before {
+	content: "\e64d";
+}
+.icon-apple:before {
+	content: "\e64e";
+}
+.icon-windows:before {
+	content: "\e64f";
+}
+.icon-info:before {
+	content: "\e603";
+}
+.icon-question:before {
+	content: "\e642";
+}
+.icon-warning:before {
+	content: "\e643";
+}
+.icon-refresh:before {
+	content: "\e650";
+}
+.icon-heart:before {
+	content: "\e651";
+}

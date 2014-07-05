@@ -1,0 +1,351 @@
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+
+.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
+.home {}                          /* home page */
+.blog {}                          /* blog template page */
+.archive {}                       /* archive page */
+.date {}                          /* date archive page */
+	.date-paged-1 {}                /* replace the number to the corresponding page number */
+.search {}                        /* search page */
+	.search-results {}              /* search result page */
+	.search-no-results {}           /* no results search page */
+	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
+.error404 {}                      /* 404 page */
+.single {}                        /* single post page */
+	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
+	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
+.attachment {}                    /* attatchment page */
+	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
+	.attachment-mime-type {}        /* style mime type pages */
+.author {}			              /* author page */
+	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
+	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
+.category {}                      /* category page */
+	.category-1 {}                  /* individual category page (i.e. body.category-6) */
+	.category-paged-1 {}            /* replace the number to the corresponding page number */
+.tag {}                           /* tag page */
+	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
+	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
+.page-template {}                 /* custom page template page */
+	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
+	.page-paged-1 {}                /* replace the number to the corresponding page number */
+	.page-parent {}                 /* parent page template */
+	.page-child {}                  /* child page template */
+	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
+.logged-in {}                     /* if user is logged in */
+.paged {}                         /* paged items like search results or archives */
+	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+#content {
+	margin: 0;
+	padding: 0;
+	//width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	position: relative;
+	//background-color: $body-bg-color;
+}
+
+	#inner-content {}
+
+	.homepage {
+		@include rem-and-px(padding-top, ($base-spacing-unit * 4));
+	}
+
+	.marquee-page {
+		@include rem-and-px(padding-top, ($base-spacing-unit * 25));
+			@include breakpoint(small) { @include rem-and-px(padding-top, ($base-spacing-unit * 20)); }
+			@include breakpoint(medium) { @include rem-and-px(padding-top, ($base-spacing-unit * 22)); }
+			@include breakpoint(large) { @include rem-and-px(padding-top, ($base-spacing-unit * 23)); }
+			@include breakpoint(xlarge) { @include rem-and-px(padding-top, ($base-spacing-unit * 27)); }
+		.icon-arrow-down {
+			color: $white;
+			display: block;
+			@include rem-and-px(margin-top, -($base-spacing-unit * 15));
+				@include breakpoint(small) { @include rem-and-px(margin-top, -($base-spacing-unit * 12)); }		
+			@include rem-and-px(margin-bottom, ($base-spacing-unit * 18));
+				@include breakpoint(small) { @include rem-and-px(margin-bottom, ($base-spacing-unit * 12)); }
+			@include rem-and-px(font-size, 1.2rem);
+
+		}
+	}
+
+		.hentry {
+
+			header {}
+
+			footer { 
+				h4, .h4 {
+					&:after {
+						content: '';
+						display: inline;
+					}
+					a { opacity: 1; }
+					a:hover { color: $white; opacity: 0.75; }
+				}
+			}
+
+		} /* end .hentry */
+
+		.single-title,
+		.page-title {
+			text-align: center;
+		}
+
+		.single-title {}
+
+		.page-title {}
+
+		.archive-title { }
+
+		/* want to style individual post classes? Booya! */
+		.post-id {}         /* post by id (i.e. post-3) */
+		.post {}            /* general post style */
+		.page {}            /* general article on a page style */
+		.attachment {}      /* general style on an attatchment */
+		.sticky {}          /* sticky post style */
+		.hentry {}          /* hentry class */
+		.category-slug {}   /* style by category (i.e. category-videos) */
+		.tag-slug {}        /* style by tag (i.e. tag-news) */
+
+		.single .article-header, .page .article-header {
+			@include rem-and-px(padding-top, ($base-spacing-unit * 4));	
+			@include rem-and-px(padding-bottom, ($base-spacing-unit * 1));			
+			@include rem-and-px(padding-left, ($half-spacing-unit/2));
+			@include rem-and-px(padding-right, ($half-spacing-unit/2));	
+			@include rem-and-px(margin-bottom, ($base-spacing-unit * 1));
+
+			@include breakpoint(small) {
+				@include rem-and-px(padding-top, ($base-spacing-unit * 6));					
+			}
+
+		} /* end .article-header */
+
+		/* post meta */
+		.byline {
+			color: $byline-color;
+			text-align: center;
+			font-style: italic;
+			font-weight: 300;
+			line-height: 2.2em;
+			//@include rem-and-px(margin-bottom, ($base-spacing-unit * 3));
+
+			.author {
+				text-transform: uppercase;
+				font-size: 0.9em;
+				font-style: normal;
+				font-weight: 500;
+			}
+
+			time {}
+		}
+
+		/* entry content */
+		.entry-content {
+
+			p {}
+
+				p:first-child {
+					font-style: italic;
+					font-weight: 300;
+					@include rem-and-px(font-size, 1.25rem);
+				}
+
+				p:last-child {
+					@include rem-and-px(margin-bottom, ($base-spacing-unit * 2));
+				}
+
+
+			ul, ol, table, dl {}
+
+			ul, ol {
+
+				li {
+					@include rem-and-px(font-size, 0.9rem);
+						@include breakpoint(mobile) { @include rem-and-px(font-size, 1rem); }
+					@include rem-and-px(margin-left, ($half-spacing-unit * 3));
+					@include rem-and-px(margin-right, ($half-spacing-unit * 3));
+					@include rem-and-px(padding-left, $half-spacing-unit);
+					@include rem-and-px(padding-right, $half-spacing-unit);
+					margin-bottom: 0;			
+				}
+
+			}
+
+			ul {
+
+				li {}
+
+			}
+
+			ol {
+
+				li {}
+
+			}
+
+			blockquote {
+
+				color: $gray;
+				border-left: 1px dotted $gray;
+
+				@include rem-and-px(padding-left, $half-spacing-unit);
+				@include rem-and-px(padding-right, $half-spacing-unit);
+				@include rem-and-px(margin-left, $half-spacing-unit);
+				@include rem-and-px(margin-right, $half-spacing-unit);
+
+				p, p:first-child {
+					@include rem-and-px(font-size, 0.9rem);					
+				}
+
+				p {}
+				p:first-child {}
+
+				p:last-child {
+					@include rem-and-px(margin-bottom, $base-spacing-unit);
+				}
+
+				&:before {}
+
+			}
+
+			dl {}
+
+			dt {}
+
+			dd {
+				margin-left: 0;
+				//font-size: 0.9em;
+				color: #787878;
+			}
+
+			video, object {
+				max-width: 100%;
+				height: auto;
+			}
+
+			pre {
+				@include rem-and-px(font-size, 0.8rem);
+				color: $white;
+				background: $black;
+				@include rem-and-px(padding-left, $half-spacing-unit);
+				@include rem-and-px(padding-right, $half-spacing-unit);
+			}
+
+		} /* end .entry-content */
+
+		.article-footer {
+
+			text-align: center;
+
+		} /* end .article-footer */
+
+		.wp-caption {
+			max-width: 100%;
+			background: #eee;
+			padding: 5px;
+
+			/* images inside wp-caption */
+			img {
+				max-width: 100%;
+				margin-bottom: 0;
+				width: 100%;
+			}
+
+			p.wp-caption-text {
+				//font-size: 0.85em;
+				//margin: 4px 0 7px;
+				text-align: center;
+			}
+
+		} /* end .wp-caption */
+
+		/* image gallery styles */
+		.gallery {
+
+			dl {
+
+				a {}
+
+				img {}
+
+			}
+
+			dt {}
+
+			dd {}
+
+		} /* end .gallery */
+
+		/* gallery caption styles */
+		.gallery-caption {}
+
+		.size-full {}
+		.size-large {}
+		.size-medium {}
+		.size-thumbnail {}
+
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+
+.pagination,
+.wp-prev-next {
+	//margin: 1.1em 0 2.2em;
+}
+	.pagination{
+        text-align: center;
+        ul {
+            display: inline-block;
+            white-space: nowrap;
+            padding:0;
+            clear: both;
+            //margin: 1px;
+            li {
+                padding: 0;
+                margin: 0;
+                float: left;
+                display: inline;
+                overflow: hidden;
+                a, span {
+                    margin: 0;
+                    text-decoration: none;
+                    padding: 0;
+                    line-height: 1em;
+                    //font-size: 1em;
+                    font-weight: normal;
+                    padding: .5em;
+                    min-width: 1em;
+                    display: block;
+                }
+                span.current{
+                	font-weight: bold;
+                }
+                a:hover, a:focus {
+                    
+                }
+            }
+        }
+    } /* end .bones_page_navi */
+
+	/* fallback previous & next links */
+	.wp-prev-next {
+
+		ul {}
+
+		.prev-link {
+			float: left;
+		}
+
+		.next-link {
+			float: right;
+		}
+
+	} /* end .wp-prev-next */

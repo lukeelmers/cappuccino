@@ -1,0 +1,37 @@
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {
+	clear: both;
+	//padding: $padding-s;
+	margin: 0 auto;
+	max-width: $body-max-width;	
+}
+
+	/*
+	if you checked out the link above:
+	http://www.alistapart.com/articles/organizing-mobile/
+	you'll want to style the footer nav
+	a bit more in-depth. Remember to keep
+	it simple because you'll have to
+	override these styles for the desktop
+	view.
+	*/
+	.footer-links {
+		ul {
+			li {
+				a {
+					&:hover {}
+				}
+				/*
+				be careful with the depth of your menus.
+				it's very rare to have multi-depth menus in
+				the footer.
+				*/
+				ul {}
+			}
+		}
+	} /* end .footer-links */
+
+	.copyright {}

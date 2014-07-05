@@ -1,0 +1,201 @@
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+
+/* h3 comment title */
+#comments {
+
+	margin-bottom: 0;
+
+	/* number of comments span */
+	span {}
+
+}
+
+#leave-reply {
+	@include rem-and-px(font-size, 0.8rem);
+	color: $gray;
+	font-weight: 400;
+	padding-left: 20px;
+	&:hover { color: $black; text-decoration: underline; }
+}
+
+.comment-nav {
+
+	ul {
+		@extend h5;
+		@include rem-and-px(font-size, 0.6rem);
+		text-align: right;
+		line-height: 1.5em;
+		margin-bottom: 0;
+
+		li { display: block; }
+	}
+}
+
+
+.commentlist {
+
+	@include rem-and-px(font-size, 0.75rem);
+
+	& > li { border-bottom: 3px dashed $light-gray; }
+	
+	li {
+		position: relative;
+		clear: both;
+		overflow: hidden;
+		list-style-type: none;
+		@include rem-and-px(margin-left, $half-spacing-unit/2);
+			@include breakpoint(small){ @include rem-and-px(margin-left, $half-spacing-unit); }
+
+		.bypostauthor { // Change the name color to highlight post author's comments
+			cite.fn, cite.fn a.url {
+				color: $highlight-color;
+			}
+		}
+
+		p:last-child { @include rem-and-px(margin-bottom, $half-spacing-unit); }
+
+		&:last-child {
+			margin-bottom: 0;
+			border-bottom: none;
+		}
+
+		ul.children {
+			border-left: 1px dotted $gray;
+
+			li {}
+
+			/* variations */
+			.comment {}
+			.alt {}
+			.odd {}
+			.even {}
+			.depth-1 {}           /* change number for different depth */
+			.byuser {}
+			.bypostauthor {}
+			.comment-author-admin {}
+
+		} /* end .commentlist li ul.children */
+	}
+
+	li[class*=depth-] {}
+	li.depth-1 {}
+		li:not(.depth-1) {}
+	li.depth-2 {}
+	li.depth-3 {}
+	li.depth-4 {}
+	li.depth-5 {}
+
+	/* general comment classes */
+	.alt {}
+	.odd {}
+	.even {}
+	.parent {}
+	.comment {}
+	.children {}
+	.pingback {}
+	.bypostauthor {}
+	.comment-author {}
+	.comment-author-admin {}
+	.thread-alt {}
+	.thread-odd {}
+	.thread-even {}
+
+	/* vcard */
+	.vcard {
+		@extend .media; // media object container
+		@include rem-and-px(height, ($base-spacing-unit*2)); // should match height of author image below
+
+		img.photo {}
+
+		img.avatar {
+			@extend .img; // media object img
+			width: 0; // remove empty space when avatar is hidden on mobile
+			height: 0;
+			@include breakpoint(small) {
+				@include rem-and-px(width, ($base-spacing-unit*2)); // specify size for retina
+				@include rem-and-px(height, ($base-spacing-unit*2));
+			}
+		}
+		
+		.vcard-meta {
+			@extend .bd; // media object bd
+			@include rem-and-px(padding-top, ($half-spacing-unit/4));
+		}
+
+			cite.fn {
+				@extend h5;
+				@include rem-and-px(font-size, 1.4rem);
+				text-transform: capitalize;
+			
+				a.url {
+					color: $black; 
+					text-decoration: none;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
+			}
+
+			time {
+				@extend h6;
+				font-family: $sans-serif;
+				font-weight: 400;
+				line-height: 1em;
+				color: $gray;
+				display: block;
+				text-transform: uppercase;
+
+				a {
+					color: $highlight-color;
+					text-decoration: none;
+
+					&:hover {
+						color: $gray;
+					}
+
+				}
+
+			}
+
+	} /* end .commentlist .vcard */
+
+
+	/* comment meta */
+	.comment-meta {
+
+		a {}
+
+	}
+
+	.commentmetadata {
+
+		a {}
+
+	}
+
+	/* comment content */
+	.comment_content {
+		@include rem-and-px(margin-top, $half-spacing-unit);
+		@include rem-and-px(margin-bottom, $half-spacing-unit);
+
+		p {
+			line-height: 1.5em;
+		}
+
+	} /* end .commentlist .comment_content */
+
+	/* comment reply link */
+	.comment-reply-link {
+
+		&:hover,
+		&:focus {
+
+		}
+
+	} /* end .commentlist .comment-reply-link */
+
+} /* end .commentlist */

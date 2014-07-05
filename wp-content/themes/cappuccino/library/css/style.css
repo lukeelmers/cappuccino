@@ -1,0 +1,1858 @@
+ /******************************************************************
+Site Name: le14 WordPress theme
+Author: Luke Elmers / LukeElmers.com
+
+Stylesheet: Main Stylesheet
+******************************************************************/
+/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Correct `block` display not defined in IE 8/9.
+ */
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,400,400italic,700,700italic,900,900italic,300);
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/*
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/*
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/*
+ * Address styling not present in IE 8/9.
+ */
+[hidden] {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */ }
+
+/*
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/*
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/*
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/*
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/*
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/*
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/*
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/*
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/*
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/*
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/*
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/*
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/*
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/*
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/*
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/*
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal; }
+
+/*
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none; }
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/*
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/*
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/*
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*------------------------------------*\
+  RESET  - http://coding.smashingmagazine.com/2011/03/14/technical-web-typography-guidelines-and-techniques/
+\*------------------------------------*/
+body, div, dl, dt, dd, ul, ol, li,
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .comment-nav ul, .commentlist .vcard cite.fn, .h5, h6, #allowed_tags, .commentlist .vcard time, .h6,
+pre, form, fieldset, input, textarea,
+p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+fieldset, img {
+  border: 0; }
+
+address, caption, cite, dfn, th, var {
+  font-style: normal;
+  font-weight: normal; }
+
+caption, th {
+  text-align: left; }
+
+h1, h2, h3, h4, h5, .comment-nav ul, .commentlist .vcard cite.fn, h6, #allowed_tags, .commentlist .vcard time {
+  font-size: 100%;
+  font-weight: normal; }
+
+q:before, q:after {
+  content: ''; }
+
+abbr, acronym {
+  border: 0; }
+
+/*********************
+TYPOGRAPHY
+*********************/
+/*********************
+COLORS
+*********************/
+/*********************
+BREAKPOINTS
+*********************/
+/*********************
+POSITIONING
+*********************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.scss stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+http://gridpak.com/ - Create your own responsive grid.
+
+The grid below is a combination of the 1140 grid and Twitter Boostrap. 
+I liked 1140 but Boostrap's grid was way more detailed so I merged them 
+together, let's see how this works out. If you want to use 1140, the original 
+values are commented out on each line.
+
+******************************************************************/
+.onecol {
+  width: 5.801104972%; }
+
+/* 4.85%;  } /* grid_1  */
+.twocol {
+  width: 14.364640883%; }
+
+/* 13.45%; } /* grid_2  */
+.threecol {
+  width: 22.928176794%; }
+
+/* 22.05%; } /* grid_3  */
+.fourcol {
+  width: 31.491712705%; }
+
+/* 30.75%; } /* grid_4  */
+.fivecol {
+  width: 40.055248616%; }
+
+/* 39.45%; } /* grid_5  */
+.sixcol {
+  width: 48.618784527%; }
+
+/* 48%;    } /* grid_6  */
+.sevencol {
+  width: 57.182320438000005%; }
+
+/* 56.75%; } /* grid_7  */
+.eightcol {
+  width: 65.74585634900001%; }
+
+/* 65.4%;  } /* grid_8  */
+.ninecol {
+  width: 74.30939226%; }
+
+/* 74.05%; } /* grid_9  */
+.tencol {
+  width: 82.87292817100001%; }
+
+/* 82.7%;  } /* grid_10 */
+.elevencol {
+  width: 91.436464082%; }
+
+/* 91.35%; } /* grid_11 */
+.twelvecol {
+  width: 99.999999993%; }
+
+/* 100%;   } /* grid_12 */
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+  position: relative;
+  float: left;
+  margin-left: 2.762430939%; }
+
+.first {
+  margin-left: 0; }
+
+.last {
+  float: right; }
+
+/*********************
+GENERAL MIXINS
+*********************/
+/**
+ * Style any number of headings in one fell swoop, e.g.:
+ *
+   .foo{
+       @include headings(1, 3){
+           color:#BADA55;
+       }
+    }
+ *
+ * With thanks to @lar_zzz, @paranoida, @rowanmanning and ultimately
+ * @thierrylemoulec for refining and improving my initial mixin.
+ */
+/**
+ * Create a pixel value fallback for browsers that don't support rem.
+ * Requires you to declare a property name and a size in rem.
+ * Specifying "rem" after the unit is optional.
+ *
+   `@include px-fallback(font-size, 2rem);`
+   `@include px-fallback(padding-left, 1.5);`
+   `@include px-fallback(margin-bottom, $base-spacing-unit);`
+ *
+ */
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ *
+   `@include vendor(border-radius, 4px);`
+ *
+ */
+.alert-help, .alert-info, .alert-error, .alert-success {
+  margin: 0;
+  margin-top: 13.5px;
+  margin-top: 0.75rem;
+  margin-bottom: 13.5px;
+  margin-bottom: 0.75rem;
+  padding: 13.5px;
+  padding: 0.75rem;
+  border: 1px solid;
+  line-height: 1em; }
+
+.alert-help {
+  border-color: #e8dc59;
+  background: #ebe16f; }
+
+.alert-info {
+  border-color: #bfe4f4;
+  background: #d5edf8; }
+
+.alert-error {
+  border-color: #f8cdce;
+  background: #fbe3e4; }
+
+.alert-success {
+  border-color: #deeaae;
+  background: #e6efc2; }
+
+/*********************
+MEDIA QUERIES
+*********************/
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BUTTONS
+*********************/
+.button, .button:visited {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: 1px solid #454545;
+  border-top-color: #545454;
+  border-left-color: #545454;
+  padding: 4px 12px;
+  color: #fcfcfc;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  margin-bottom: 20px;
+  line-height: 21px;
+  border-radius: 4px;
+  background-color: #595959;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#666666), to(#595959));
+  background-image: -webkit-linear-gradient(top, #666666, #595959);
+  background-image: -moz-linear-gradient(top, #666666, #595959);
+  background-image: -o-linear-gradient(top, #666666, #595959);
+  background-image: linear-gradient(to bottom, #666666, #595959); }
+  .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
+    color: #fcfcfc;
+    border: 1px solid #454545;
+    border-top-color: #333333;
+    border-left-color: #333333;
+    background-color: #4d4d4d;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#4d4d4d));
+    background-image: -webkit-linear-gradient(top, #595959, #4d4d4d);
+    background-image: -moz-linear-gradient(top, #595959, #4d4d4d);
+    background-image: -o-linear-gradient(top, #595959, #4d4d4d);
+    background-image: linear-gradient(to bottom, #595959, #4d4d4d); }
+  .button:active, .button:visited:active {
+    background-color: #666666;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#666666));
+    background-image: -webkit-linear-gradient(top, #595959, #666666);
+    background-image: -moz-linear-gradient(top, #595959, #666666);
+    background-image: -o-linear-gradient(top, #595959, #666666);
+    background-image: linear-gradient(to bottom, #595959, #666666); }
+
+.blue-button, .blue-button:visited {
+  border-color: #a9daf1;
+  text-shadow: 0 1px 1px #a9daf1;
+  background-color: #bfe4f4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d5edf8), to(#bfe4f4));
+  background-image: -webkit-linear-gradient(top, #d5edf8, #bfe4f4);
+  background-image: -moz-linear-gradient(top, #d5edf8, #bfe4f4);
+  background-image: -o-linear-gradient(top, #d5edf8, #bfe4f4);
+  background-image: linear-gradient(to bottom, #d5edf8, #bfe4f4);
+  box-shadow: inset 0 0 3px white; }
+  .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
+    border-color: #93d1ed;
+    background-color: #a9daf1;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c4e6f5), to(#a9daf1));
+    background-image: -webkit-linear-gradient(top, #c4e6f5, #a9daf1);
+    background-image: -moz-linear-gradient(top, #c4e6f5, #a9daf1);
+    background-image: -o-linear-gradient(top, #c4e6f5, #a9daf1);
+    background-image: linear-gradient(to bottom, #c4e6f5, #a9daf1); }
+  .blue-button:active, .blue-button:visited:active {
+    background-color: #d5edf8;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#bfe4f4), to(#d5edf8));
+    background-image: -webkit-linear-gradient(top, #bfe4f4, #d5edf8);
+    background-image: -moz-linear-gradient(top, #bfe4f4, #d5edf8);
+    background-image: -o-linear-gradient(top, #bfe4f4, #d5edf8);
+    background-image: linear-gradient(to bottom, #bfe4f4, #d5edf8); }
+
+/*********************
+TOOLS
+*********************/
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: "";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.inline {
+  display: inline; }
+
+.unselectable {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none; }
+
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic; }
+
+/*********************
+CENTERING
+*********************/
+/* Center any element of any size in a container of any size.
+Supports modern browsers & IE8+: http://css-tricks.com/centering-in-the-unknown/
+*/
+/* This parent can be any width and height */
+.centered-wrap {
+  text-align: center; }
+
+/* The ghost, nudged to maintain perfect centering */
+.centered-wrap:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+  /* Adjusts for spacing */ }
+
+/* The element to be centered, can
+   also be of any width and height */
+.centered {
+  display: inline-block;
+  vertical-align: middle; }
+
+@font-face {
+  font-family: 'cappuccino';
+  src: url("../fonts/cappuccino.eot");
+  src: url("../fonts/cappuccino.eot?#iefix") format("embedded-opentype"), url("../fonts/cappuccino.ttf") format("truetype"), url("../fonts/cappuccino.woff") format("woff"), url("../fonts/cappuccino.svg#cappuccino") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'cappuccino';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-quill:before {
+  content: "\e600"; }
+
+.icon-home:before {
+  content: "\e601"; }
+
+.icon-user:before {
+  content: "\e602"; }
+
+.icon-lab:before {
+  content: "\e604"; }
+
+.icon-fire:before {
+  content: "\e605"; }
+
+.icon-bolt:before {
+  content: "\e606"; }
+
+.icon-bookmark:before {
+  content: "\e607"; }
+
+.icon-link:before {
+  content: "\e608"; }
+
+.icon-shocked:before {
+  content: "\e609"; }
+
+.icon-neutral:before {
+  content: "\e60a"; }
+
+.icon-smiley:before {
+  content: "\e60b"; }
+
+.icon-close:before {
+  content: "\e60c"; }
+
+.icon-checkmark-full:before {
+  content: "\e60d"; }
+
+.icon-minus:before {
+  content: "\e60e"; }
+
+.icon-plus:before {
+  content: "\e60f"; }
+
+.icon-embed:before {
+  content: "\e610"; }
+
+.icon-code:before {
+  content: "\e611"; }
+
+.icon-terminal:before {
+  content: "\e612"; }
+
+.icon-instagram:before {
+  content: "\e613"; }
+
+.icon-google-plus:before {
+  content: "\e614"; }
+
+.icon-flickr:before {
+  content: "\e615"; }
+
+.icon-dribbble:before {
+  content: "\e616"; }
+
+.icon-forrst:before {
+  content: "\e617"; }
+
+.icon-github:before {
+  content: "\e618"; }
+
+.icon-wordpress:before {
+  content: "\e619"; }
+
+.icon-linkedin:before {
+  content: "\e61a"; }
+
+.icon-stackoverflow:before {
+  content: "\e61b"; }
+
+.icon-pinterest:before {
+  content: "\e61c"; }
+
+.icon-chrome:before {
+  content: "\e61d"; }
+
+.icon-firefox:before {
+  content: "\e61e"; }
+
+.icon-IE:before {
+  content: "\e61f"; }
+
+.icon-opera:before {
+  content: "\e620"; }
+
+.icon-safari:before {
+  content: "\e621"; }
+
+.icon-file-pdf:before {
+  content: "\e622"; }
+
+.icon-file-code:before {
+  content: "\e623"; }
+
+.icon-twitter:before {
+  content: "\e624"; }
+
+.icon-facebook:before {
+  content: "\e625"; }
+
+.icon-vimeo:before {
+  content: "\e626"; }
+
+.icon-rss:before {
+  content: "\e627"; }
+
+.icon-coffee:before {
+  content: "\e628"; }
+
+.icon-bubble:before {
+  content: "\e629"; }
+
+.icon-tag:before {
+  content: "\e62a"; }
+
+.icon-pencil:before {
+  content: "\e62b"; }
+
+.icon-book:before {
+  content: "\e62c"; }
+
+.icon-mobile:before {
+  content: "\e62d"; }
+
+.icon-mobile2:before {
+  content: "\e62e"; }
+
+.icon-tablet:before {
+  content: "\e62f"; }
+
+.icon-desktop:before {
+  content: "\e630"; }
+
+.icon-keyboard:before {
+  content: "\e631"; }
+
+.icon-spinner:before {
+  content: "\e632"; }
+
+.icon-search:before {
+  content: "\e633"; }
+
+.icon-wand:before {
+  content: "\e634"; }
+
+.icon-cloud:before {
+  content: "\e635"; }
+
+.icon-play:before {
+  content: "\e636"; }
+
+.icon-pause:before {
+  content: "\e637"; }
+
+.icon-stop:before {
+  content: "\e638"; }
+
+.icon-backward:before {
+  content: "\e639"; }
+
+.icon-forward:before {
+  content: "\e63a"; }
+
+.icon-arrow-up:before {
+  content: "\e63b"; }
+
+.icon-arrow-right:before {
+  content: "\e63c"; }
+
+.icon-arrow-down:before {
+  content: "\e63d"; }
+
+.icon-arrow-left:before {
+  content: "\e63e"; }
+
+.icon-foursquare:before {
+  content: "\e63f"; }
+
+.icon-html5:before {
+  content: "\e640"; }
+
+.icon-checkmark-empty:before {
+  content: "\e641"; }
+
+.icon-bug:before {
+  content: "\e644"; }
+
+.icon-cog:before {
+  content: "\e645"; }
+
+.icon-mail:before {
+  content: "\e646"; }
+
+.icon-sad:before {
+  content: "\e647"; }
+
+.icon-meter:before {
+  content: "\e648"; }
+
+.icon-headphones:before {
+  content: "\e649"; }
+
+.icon-music:before {
+  content: "\e64a"; }
+
+.icon-share:before {
+  content: "\e64b"; }
+
+.icon-tumblr:before {
+  content: "\e64c"; }
+
+.icon-android:before {
+  content: "\e64d"; }
+
+.icon-apple:before {
+  content: "\e64e"; }
+
+.icon-windows:before {
+  content: "\e64f"; }
+
+.icon-info:before {
+  content: "\e603"; }
+
+.icon-question:before {
+  content: "\e642"; }
+
+.icon-warning:before {
+  content: "\e643"; }
+
+.icon-refresh:before {
+  content: "\e650"; }
+
+.icon-heart:before {
+  content: "\e651"; }
+
+img {
+  margin-bottom: 27px;
+  margin-bottom: 1.5rem;
+  height: auto;
+  min-width: auto;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.cover-image {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center; }
+
+/* align images */
+.alignleft, img.alignleft {
+  margin-right: 1.5em;
+  display: inline;
+  float: left; }
+
+.alignright, img.alignright {
+  margin-left: 1.5em;
+  display: inline;
+  float: right; }
+
+.aligncenter, img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both; }
+
+.media, .commentlist .vcard, .bd, .commentlist .vcard .vcard-meta {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1; }
+
+.media .img, .commentlist .vcard .img, .commentlist .vcard img.avatar {
+  float: left;
+  margin-right: 10px; }
+
+.media .img img, .commentlist .vcard .img img, .commentlist .vcard img.avatar img {
+  display: block; }
+
+.media .imgExt, .commentlist .vcard .imgExt {
+  float: right;
+  margin-left: 10px; }
+
+/*********************
+GENERAL STYLES
+*********************/
+html {
+  font-size: 1.125em;
+  line-height: 1.5em;
+  font-family: "Merriweather", "Georgia", Adobe Garamond Pro, Cambria, Times New Roman, Times, serif;
+  color: #1e1e1e;
+  background-color: #fcfcfc;
+  overflow-y: scroll;
+  min-height: 100%; }
+  @media (min-width: 40em) {
+    html {
+      font-size: 1.375em; } }
+  @media (min-width: 78em) {
+    html {
+      font-size: 1.5em; } }
+
+body, div, dl, dt, dd, ul, ol, li,
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .comment-nav ul, .commentlist .vcard cite.fn, .h5, h6, #allowed_tags, .commentlist .vcard time, .h6,
+pre, form, fieldset, input, textarea,
+p, blockquote, th, td {
+  margin-bottom: 27px;
+  margin-bottom: 1.5rem; }
+
+::-moz-selection {
+  background-color: #1e1e1e;
+  color: #fcfcfc; }
+
+::selection {
+  background-color: #1e1e1e;
+  color: #fcfcfc; }
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+.wrap {
+  max-width: 35em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 13.5px;
+  padding-left: 0.75rem;
+  padding-right: 13.5px;
+  padding-right: 0.75rem; }
+  @media (min-width: 65em) {
+    .wrap {
+      padding-left: 0;
+      padding-right: 0; } }
+
+/*********************
+LINK STYLES
+*********************/
+a, a:visited {
+  color: #666666;
+  /* on hover */
+  /* on click */
+  /* mobile tap color */ }
+  a:hover, a:focus, a:visited:hover, a:visited:focus {
+    color: #4f4f4f; }
+  a:link, a:visited:link {
+    /*
+    this highlights links on iPhones/iPads.
+    so it basically works like the :hover selector
+    for mobile devices.
+    */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+
+/******************************************************************
+HEADINGS (H1-H6)
+******************************************************************/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .comment-nav ul, .commentlist .vcard cite.fn, .h5, h6, #allowed_tags, .commentlist .vcard time, .h6 {
+  text-rendering: optimizelegibility;
+  font-weight: 400;
+  /* removing text decoration from all headline links */ }
+  h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .comment-nav ul a, .commentlist .vcard cite.fn a, .h5 a, h6 a, #allowed_tags a, .commentlist .vcard time a, .h6 a {
+    text-decoration: none; }
+
+h1, .h1 {
+  font-size: 54px;
+  font-size: 3rem;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1em;
+  letter-spacing: -0.04em;
+  margin-bottom: 0; }
+
+h2, .h2 {
+  font-size: 25.2px;
+  font-size: 1.4rem;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
+
+h3, .h3 {
+  font-size: 19.8px;
+  font-size: 1.1rem;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin-bottom: 0;
+  color: #666666; }
+  h3:after, .h3:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 13.5px;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid #eeeeee; }
+
+h4, .h4 {
+  font-size: 14.4px;
+  font-size: 0.8rem;
+  line-height: 13.5px;
+  line-height: 0.75rem;
+  min-height: 27px;
+  min-height: 1.5rem;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #fcfcfc;
+  background: #1e1e1e;
+  display: inline;
+  box-shadow: 0.75rem 0 0 #1e1e1e, -0.75rem 0 0 #1e1e1e;
+  margin-right: 27px;
+  margin-right: 1.5rem;
+  padding-top: 6.75px;
+  padding-top: 0.375rem;
+  padding-bottom: 6.75px;
+  padding-bottom: 0.375rem; }
+  h4:after, .h4:after {
+    content: '';
+    display: block; }
+  h4 a, h4 a:visited, .h4 a, .h4 a:visited {
+    color: #fcfcfc; }
+
+h5, .comment-nav ul, .commentlist .vcard cite.fn, .h5 {
+  font-size: 15.84px;
+  font-size: 0.88rem;
+  font-style: italic;
+  font-weight: 300; }
+
+h6, #allowed_tags, .commentlist .vcard time, .h6 {
+  font-size: 11.88px;
+  font-size: 0.66rem; }
+
+/*********************
+HEADER STYLES
+*********************/
+.header {
+  color: #1e1e1e;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  z-index: 1;
+  height: 81px;
+  height: 4.5rem;
+  padding-top: 13.5px;
+  padding-top: 0.75rem;
+  padding-bottom: 13.5px;
+  padding-bottom: 0.75rem; }
+  .header a {
+    color: #1e1e1e;
+    text-decoration: none; }
+
+.marquee {
+  display: none; }
+  @media (min-width: 40em) {
+    .marquee {
+      display: block;
+      float: left;
+      text-align: left;
+      line-height: 1em;
+      padding-top: 13.5px;
+      padding-top: 0.75rem;
+      padding-left: 27px;
+      padding-left: 1.5rem;
+      padding-right: 27px;
+      padding-right: 1.5rem; } }
+
+@media (min-width: 40em) {
+  .marquee-title {
+    font-size: 25.2px;
+    font-size: 1.4rem;
+    text-transform: lowercase; } }
+
+.marquee-subtitle, .marquee-subtitle-huge {
+  font-size: 10.8px;
+  font-size: 0.6rem;
+  font-family: "Merriweather", "Georgia", Adobe Garamond Pro, Cambria, Times New Roman, Times, serif;
+  font-style: italic;
+  font-weight: 300; }
+
+.marquee-huge {
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 135px;
+  margin-top: 7.5rem;
+  margin-left: 13.5px;
+  margin-left: 0.75rem; }
+  @media (min-width: 40em) {
+    .marquee-huge {
+      margin-top: 162px;
+      margin-top: 9rem;
+      margin-left: 54px;
+      margin-left: 3rem; } }
+  @media (min-width: 65em) {
+    .marquee-huge {
+      margin-top: 216px;
+      margin-top: 12rem;
+      margin-left: 162px;
+      margin-left: 9rem; } }
+  @media (min-width: 78em) {
+    .marquee-huge {
+      margin-top: 216px;
+      margin-top: 12rem;
+      margin-left: 189px;
+      margin-left: 10.5rem; } }
+
+.marquee-subtitle-huge {
+  font-size: 21.6px;
+  font-size: 1.2rem; }
+
+.marquee-image {
+  /* Based on Doug Neiner's technique: http://css-tricks.com/perfect-full-page-background-image/ */
+  /* Set rules to fill background */
+  min-width: 1024px;
+  z-index: -999999;
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  /* Set up positioning */
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+@media screen and (max-width: 1024px) {
+  /* Specific to this particular image */
+  .marquee-image {
+    left: 50%;
+    margin-left: -512px;
+    /* 50% */ } }
+.text-white, .text-white a, .text-white .byline {
+  color: #fcfcfc;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(0, 0, 0, 0.3); }
+
+.header-huge > #inner-header {
+  background-color: inherit; }
+
+#inner-header #logo {
+  float: left; }
+  #inner-header #logo img {
+    width: 47.25px;
+    width: 2.625rem; }
+
+/*********************
+NAVIGATION STYLES
+*********************/
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+.nav {
+  padding-top: 13.5px;
+  padding-top: 0.75rem;
+  float: right;
+  /* end .menu li */
+  /* highlight current page */
+  /* end current highlighters */ }
+  .nav li {
+    display: inline-block;
+    padding-left: 27px;
+    padding-left: 1.5rem;
+    /*
+    so you really have to rethink your dropdowns for mobile.
+    you don't want to have it expand too much because the
+    screen is so small. How you manage your menu should
+    depend on the project. Here's some great info on it:
+    http://www.alistapart.com/articles/organizing-mobile/
+    */
+    /* showing sub-menus */ }
+    @media (min-width: 40em) {
+      .nav li {
+        padding-left: 54px;
+        padding-left: 3rem; } }
+    .nav li a {
+      text-decoration: none;
+      /*
+      remember this is for mobile ONLY, so there's no need
+      to even declare hover styles here, you can do it in
+      the style.scss file where it's relevant. We want to
+      keep this file as small as possible!
+      */ }
+      .nav li a [class^="icon-"], .nav li a [class*=" icon-"] {
+        font-size: 25.2px;
+        font-size: 1.4rem; }
+    .nav li ul.sub-menu,
+    .nav li ul.children {
+      margin-top: 0;
+      border: 1px solid #ccc;
+      border-top: 0;
+      position: absolute;
+      display: none;
+      z-index: 8999;
+      /* highlight sub-menu current page */ }
+      .nav li ul.sub-menu li,
+      .nav li ul.children li {
+        /*
+        if you need to go deeper, go nuts
+        just remember deeper menus suck
+        for usability. k, bai.
+        */ }
+        .nav li ul.sub-menu li a,
+        .nav li ul.children li a {
+          padding-left: 30px; }
+    .nav li:hover ul {
+      top: auto;
+      display: block; }
+
+/* end .nav */
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+/* for sites that are read right to left (i.e. hebrew) */
+/* home page */
+/* blog template page */
+/* archive page */
+/* date archive page */
+/* replace the number to the corresponding page number */
+/* search page */
+/* search result page */
+/* no results search page */
+/* individual paged search (i.e. body.search-paged-3) */
+/* 404 page */
+/* single post page */
+/* individual post page by id (i.e. body.postid-73) */
+/* individual paged single (i.e. body.single-paged-3) */
+/* attatchment page */
+/* individual attatchment page (i.e. body.attachmentid-763) */
+/* style mime type pages */
+/* author page */
+/* user nicename (i.e. body.author-samueladams) */
+/* paged author archives (i.e. body.author-paged-4) for page 4 */
+/* category page */
+/* individual category page (i.e. body.category-6) */
+/* replace the number to the corresponding page number */
+/* tag page */
+/* individual tag page (i.e. body.tag-news) */
+/* replace the number to the corresponding page number */
+/* custom page template page */
+/* individual page template (i.e. body.page-template-contact-php */
+/* replace the number to the corresponding page number */
+/* parent page template */
+/* child page template */
+/* replace the number to the corresponding page number */
+/* if user is logged in */
+/* paged items like search results or archives */
+/* individual paged (i.e. body.paged-3) */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+#content {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative; }
+
+.homepage {
+  padding-top: 108px;
+  padding-top: 6rem; }
+
+.marquee-page {
+  padding-top: 675px;
+  padding-top: 37.5rem; }
+  @media (min-width: 40em) {
+    .marquee-page {
+      padding-top: 540px;
+      padding-top: 30rem; } }
+  @media (min-width: 65em) {
+    .marquee-page {
+      padding-top: 594px;
+      padding-top: 33rem; } }
+  @media (min-width: 78em) {
+    .marquee-page {
+      padding-top: 621px;
+      padding-top: 34.5rem; } }
+  @media (min-width: 85em) {
+    .marquee-page {
+      padding-top: 729px;
+      padding-top: 40.5rem; } }
+  .marquee-page .icon-arrow-down {
+    color: #fcfcfc;
+    display: block;
+    margin-top: -405px;
+    margin-top: -22.5rem;
+    margin-bottom: 486px;
+    margin-bottom: 27rem;
+    font-size: 21.6px;
+    font-size: 1.2rem; }
+    @media (min-width: 40em) {
+      .marquee-page .icon-arrow-down {
+        margin-top: -324px;
+        margin-top: -18rem; } }
+    @media (min-width: 40em) {
+      .marquee-page .icon-arrow-down {
+        margin-bottom: 324px;
+        margin-bottom: 18rem; } }
+
+.hentry footer h4:after, .hentry footer .h4:after {
+  content: '';
+  display: inline; }
+.hentry footer h4 a, .hentry footer .h4 a {
+  opacity: 1; }
+.hentry footer h4 a:hover, .hentry footer .h4 a:hover {
+  color: #fcfcfc;
+  opacity: 0.75; }
+
+/* end .hentry */
+.single-title,
+.page-title {
+  text-align: center; }
+
+/* want to style individual post classes? Booya! */
+/* post by id (i.e. post-3) */
+/* general post style */
+/* general article on a page style */
+/* general style on an attatchment */
+/* sticky post style */
+/* hentry class */
+/* style by category (i.e. category-videos) */
+/* style by tag (i.e. tag-news) */
+.single .article-header, .page .article-header {
+  padding-top: 108px;
+  padding-top: 6rem;
+  padding-bottom: 27px;
+  padding-bottom: 1.5rem;
+  padding-left: 6.75px;
+  padding-left: 0.375rem;
+  padding-right: 6.75px;
+  padding-right: 0.375rem;
+  margin-bottom: 27px;
+  margin-bottom: 1.5rem; }
+  @media (min-width: 40em) {
+    .single .article-header, .page .article-header {
+      padding-top: 162px;
+      padding-top: 9rem; } }
+
+/* end .article-header */
+/* post meta */
+.byline {
+  color: #666666;
+  text-align: center;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 2.2em; }
+  .byline .author {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-style: normal;
+    font-weight: 500; }
+
+/* entry content */
+.entry-content p:first-child {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 22.5px;
+  font-size: 1.25rem; }
+.entry-content p:last-child {
+  margin-bottom: 54px;
+  margin-bottom: 3rem; }
+.entry-content ul li, .entry-content ol li {
+  font-size: 16.2px;
+  font-size: 0.9rem;
+  margin-left: 40.5px;
+  margin-left: 2.25rem;
+  margin-right: 40.5px;
+  margin-right: 2.25rem;
+  padding-left: 13.5px;
+  padding-left: 0.75rem;
+  padding-right: 13.5px;
+  padding-right: 0.75rem;
+  margin-bottom: 0; }
+  @media (min-width: 25em) {
+    .entry-content ul li, .entry-content ol li {
+      font-size: 18px;
+      font-size: 1rem; } }
+.entry-content blockquote {
+  color: #666666;
+  border-left: 1px dotted #666666;
+  padding-left: 13.5px;
+  padding-left: 0.75rem;
+  padding-right: 13.5px;
+  padding-right: 0.75rem;
+  margin-left: 13.5px;
+  margin-left: 0.75rem;
+  margin-right: 13.5px;
+  margin-right: 0.75rem; }
+  .entry-content blockquote p, .entry-content blockquote p:first-child {
+    font-size: 16.2px;
+    font-size: 0.9rem; }
+  .entry-content blockquote p:last-child {
+    margin-bottom: 27px;
+    margin-bottom: 1.5rem; }
+.entry-content dd {
+  margin-left: 0;
+  color: #787878; }
+.entry-content video, .entry-content object {
+  max-width: 100%;
+  height: auto; }
+.entry-content pre {
+  font-size: 14.4px;
+  font-size: 0.8rem;
+  color: #fcfcfc;
+  background: #1e1e1e;
+  padding-left: 13.5px;
+  padding-left: 0.75rem;
+  padding-right: 13.5px;
+  padding-right: 0.75rem; }
+
+/* end .entry-content */
+.article-footer {
+  text-align: center; }
+
+/* end .article-footer */
+.wp-caption {
+  max-width: 100%;
+  background: #eee;
+  padding: 5px;
+  /* images inside wp-caption */ }
+  .wp-caption img {
+    max-width: 100%;
+    margin-bottom: 0;
+    width: 100%; }
+  .wp-caption p.wp-caption-text {
+    text-align: center; }
+
+/* end .wp-caption */
+/* image gallery styles */
+/* end .gallery */
+/* gallery caption styles */
+/******************************************************************
+PAGE NAVI STYLES
+******************************************************************/
+.pagination {
+  text-align: center; }
+  .pagination ul {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0;
+    clear: both; }
+    .pagination ul li {
+      padding: 0;
+      margin: 0;
+      float: left;
+      display: inline;
+      overflow: hidden; }
+      .pagination ul li a, .pagination ul li span {
+        margin: 0;
+        text-decoration: none;
+        padding: 0;
+        line-height: 1em;
+        font-weight: normal;
+        padding: .5em;
+        min-width: 1em;
+        display: block; }
+      .pagination ul li span.current {
+        font-weight: bold; }
+
+/* end .bones_page_navi */
+/* fallback previous & next links */
+.wp-prev-next .prev-link {
+  float: left; }
+.wp-prev-next .next-link {
+  float: right; }
+
+/* end .wp-prev-next */
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.widget ul li {
+  /* deep nesting */ }
+  .widget ul li ul {
+    padding-left: 1em; }
+
+/* links widget */
+/* meta widget */
+/* pages widget */
+/* recent-posts widget */
+/* archives widget */
+/* tag-cloud widget */
+/* calendar widget */
+/* category widget */
+/* recent-comments widget */
+/* search widget */
+/* text widget */
+/******************************************************************
+COMMENT FORM STYLES
+******************************************************************/
+.respond-form form li {
+  list-style-type: none;
+  margin: 0; }
+  .respond-form form li label,
+  .respond-form form li small {
+    display: none; }
+.respond-form form input[type=text],
+.respond-form form input[type=email],
+.respond-form form input[type=url],
+.respond-form form textarea {
+  font-size: 14.4px;
+  font-size: 0.8rem;
+  padding: 13.5px;
+  padding: 0.75rem;
+  color: #666666;
+  background: #eeeeee;
+  border: 2px solid #666666;
+  width: 100%;
+  /* form validation */ }
+  .respond-form form input[type=text]:focus,
+  .respond-form form input[type=email]:focus,
+  .respond-form form input[type=url]:focus,
+  .respond-form form textarea:focus {
+    background: #eeeeee; }
+  .respond-form form input[type=text]:invalid,
+  .respond-form form input[type=email]:invalid,
+  .respond-form form input[type=url]:invalid,
+  .respond-form form textarea:invalid {
+    outline: none;
+    border-color: #fbc2c4;
+    background-color: #f6e7eb;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none; }
+.respond-form form textarea {
+  resize: none;
+  margin-bottom: 0;
+  margin-top: -27px;
+  margin-top: -1.5rem;
+  height: 135px;
+  height: 7.5rem; }
+
+/* comment submit button */
+#submit {
+  width: 100%;
+  height: 54px;
+  height: 3rem;
+  font-size: 18px;
+  font-size: 1rem;
+  text-transform: uppercase; }
+
+/* comment form title */
+/* cancel comment reply link */
+/* logged in comments */
+/* allowed tags */
+#allowed_tags {
+  margin-bottom: 0; }
+
+/* no comments */
+.nocomments {
+  margin: 0; }
+
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+/* h3 comment title */
+#comments {
+  margin-bottom: 0;
+  /* number of comments span */ }
+
+#leave-reply {
+  font-size: 14.4px;
+  font-size: 0.8rem;
+  color: #666666;
+  font-weight: 400;
+  padding-left: 20px; }
+  #leave-reply:hover {
+    color: #1e1e1e;
+    text-decoration: underline; }
+
+.comment-nav ul {
+  font-size: 10.8px;
+  font-size: 0.6rem;
+  text-align: right;
+  line-height: 1.5em;
+  margin-bottom: 0; }
+  .comment-nav ul li {
+    display: block; }
+
+.commentlist {
+  font-size: 13.5px;
+  font-size: 0.75rem;
+  /* general comment classes */
+  /* vcard */
+  /* end .commentlist .vcard */
+  /* comment meta */
+  /* comment content */
+  /* end .commentlist .comment_content */
+  /* comment reply link */
+  /* end .commentlist .comment-reply-link */ }
+  .commentlist > li {
+    border-bottom: 3px dashed #eeeeee; }
+  .commentlist li {
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    list-style-type: none;
+    margin-left: 6.75px;
+    margin-left: 0.375rem;
+    /* end .commentlist li ul.children */ }
+    @media (min-width: 40em) {
+      .commentlist li {
+        margin-left: 13.5px;
+        margin-left: 0.75rem; } }
+    .commentlist li .bypostauthor cite.fn, .commentlist li .bypostauthor cite.fn a.url {
+      color: #3299cc; }
+    .commentlist li p:last-child {
+      margin-bottom: 13.5px;
+      margin-bottom: 0.75rem; }
+    .commentlist li:last-child {
+      margin-bottom: 0;
+      border-bottom: none; }
+    .commentlist li ul.children {
+      border-left: 1px dotted #666666;
+      /* variations */
+      /* change number for different depth */ }
+  .commentlist .vcard {
+    height: 54px;
+    height: 3rem; }
+    .commentlist .vcard img.avatar {
+      width: 0;
+      height: 0; }
+      @media (min-width: 40em) {
+        .commentlist .vcard img.avatar {
+          width: 54px;
+          width: 3rem;
+          height: 54px;
+          height: 3rem; } }
+    .commentlist .vcard .vcard-meta {
+      padding-top: 3.375px;
+      padding-top: 0.1875rem; }
+    .commentlist .vcard cite.fn {
+      font-size: 25.2px;
+      font-size: 1.4rem;
+      text-transform: capitalize; }
+      .commentlist .vcard cite.fn a.url {
+        color: #1e1e1e;
+        text-decoration: none; }
+        .commentlist .vcard cite.fn a.url:hover {
+          text-decoration: underline; }
+    .commentlist .vcard time {
+      font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1em;
+      color: #666666;
+      display: block;
+      text-transform: uppercase; }
+      .commentlist .vcard time a {
+        color: #3299cc;
+        text-decoration: none; }
+        .commentlist .vcard time a:hover {
+          color: #666666; }
+  .commentlist .comment_content {
+    margin-top: 13.5px;
+    margin-top: 0.75rem;
+    margin-bottom: 13.5px;
+    margin-bottom: 0.75rem; }
+    .commentlist .comment_content p {
+      line-height: 1.5em; }
+
+/* end .commentlist */
+/*********************
+FOOTER STYLES
+*********************/
+.footer {
+  clear: both;
+  margin: 0 auto;
+  max-width: 35em; }
+
+/*
+if you checked out the link above:
+http://www.alistapart.com/articles/organizing-mobile/
+you'll want to style the footer nav
+a bit more in-depth. Remember to keep
+it simple because you'll have to
+override these styles for the desktop
+view.
+*/
+.footer-links ul li {
+  /*
+  be careful with the depth of your menus.
+  it's very rare to have multi-depth menus in
+  the footer.
+  */ }
+
+/* end .footer-links */
+@media print {
+  /******************************************************************
+  Site Name:
+  Author:
+  
+  Stylesheet: Print Stylesheet
+  
+  This is the print stylesheet. There's probably not a lot
+  of reasons to edit this stylesheet. If you want to
+  though, go for it.
+  
+  ******************************************************************/
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important; }
+
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline; }
+    a:after, a:visited:after {
+      content: " (" attr(href) ")"; }
+    a abbr[title]:after, a:visited abbr[title]:after {
+      content: " (" attr(title) ")"; }
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""; }
+
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+  thead {
+    display: table-header-group; }
+
+  tr, img {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; }
+
+  .sidebar,
+  .page-navigation,
+  .wp-prev-next,
+  .respond-form,
+  nav {
+    display: none; } }

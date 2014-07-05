@@ -1,0 +1,147 @@
+/*********************
+HEADER STYLES
+*********************/
+
+.header {
+	color: $black;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	z-index: 1;
+	a { color: $black; text-decoration: none; }
+	@include rem-and-px(height, ($base-spacing-unit * 3));
+	@include rem-and-px(padding-top, $half-spacing-unit);
+	@include rem-and-px(padding-bottom, $half-spacing-unit);
+}
+
+.marquee {
+	display: none;
+	@include breakpoint(small) {
+		display: block;
+		float: left;
+		text-align: left;
+		line-height: 1em;
+		@include rem-and-px(padding-top, $half-spacing-unit);
+		@include rem-and-px(padding-left, $base-spacing-unit);
+		@include rem-and-px(padding-right, $base-spacing-unit);		
+	}
+}
+
+	.marquee-title {
+		@include breakpoint(small) {
+			@include rem-and-px(font-size, 1.4rem);
+			text-transform: lowercase;
+		}
+	}
+
+	.marquee-subtitle {
+		@include rem-and-px(font-size, 0.6rem);
+		font-family: $serif;
+		font-style: italic;
+		font-weight: 300;
+	}
+
+.marquee-huge {
+	text-align: left;
+	position: absolute;
+	top: 0;
+	left: 0;
+	@include rem-and-px(margin-top, $base-spacing-unit*5);
+	@include rem-and-px(margin-left, $half-spacing-unit);
+	@include breakpoint(small) {
+		@include rem-and-px(margin-top, $base-spacing-unit*6);
+		@include rem-and-px(margin-left, $base-spacing-unit*2);		
+	}
+	@include breakpoint(medium) {
+		@include rem-and-px(margin-top, $base-spacing-unit*8);
+		@include rem-and-px(margin-left, $base-spacing-unit*6);		
+	}
+	@include breakpoint(large) {
+		@include rem-and-px(margin-top, $base-spacing-unit*8);
+		@include rem-and-px(margin-left, $base-spacing-unit*7);		
+	}
+}
+
+	.marquee-title-huge {
+	}
+
+	.marquee-subtitle-huge {
+		@extend .marquee-subtitle;
+		@include rem-and-px(font-size, 1.2rem);
+	}
+
+	.marquee-image {
+		/* Based on Doug Neiner's technique: http://css-tricks.com/perfect-full-page-background-image/ */
+		/* Set rules to fill background */
+		min-width: 1024px;
+		z-index: -999999;
+
+		/* Set up proportionate scaling */
+		width: 100%;
+		height: auto;
+
+		/* Set up positioning */
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+		@media screen and (max-width: 1024px) { /* Specific to this particular image */
+			.marquee-image {
+				left: 50%;
+				margin-left: -512px;   /* 50% */
+			}
+		}
+
+
+.text-white { 
+	color: $white;
+	text-shadow: 
+		-0px  0px 10px rgba(0,0,0,0.3), 
+		-0px -0px 10px rgba(0,0,0,0.3), 						
+		 0px -0px 10px rgba(0,0,0,0.3), 
+		 0px 0px 10px rgba(0,0,0,0.3);
+	& a, & .byline { @extend .text-white; }
+}
+
+
+	.header-huge {
+		// height: $small-header-height;	
+		// background-color: $header-bg-color;
+		// color: $white;
+		// a {
+		// 	color: $white;
+		// }
+	}
+
+	.header-huge > #inner-header {
+		//height: auto;
+		//border-bottom: none;
+		background-color: inherit;
+		#logo img {
+			//width: $logo-width-huge;
+		}
+	}
+
+	#inner-header {
+	
+		//background-color: $white;
+		//height: $base-header-height;
+		// border-bottom: 1px solid $light-gray;
+		//margin: 0 auto;
+		//padding: ($base-header-height - $logo-height)/2 $padding-s;
+
+		#logo {
+			
+			float: left;
+
+			a {}
+			
+			img {
+				@include rem-and-px(width, ($base-spacing-unit * 1.75));
+			}
+
+		}
+
+	}

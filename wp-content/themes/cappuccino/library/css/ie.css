@@ -1,0 +1,592 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Noticia+Text:400,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,400,400italic,700,700italic,900,900italic,300);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200italic);
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/*
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't 
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+*/
+/* import mixins */
+/******************************************************************
+Site Name: le14 WordPress theme
+Author: Luke Elmers / LukeElmers.com
+
+Stylesheet: Mixins & Constants Stylesheet
+******************************************************************/
+/*********************
+CLEARFIXIN'
+*********************/
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: "";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+/*********************
+TOOLS
+*********************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+/*********************
+COLORS
+*********************/
+/*********************
+POSITIONING
+*********************/
+.media {
+  margin: 10px; }
+
+.media, .bd {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1; }
+
+.media .img {
+  float: left;
+  margin-right: 10px; }
+
+.media .img img {
+  display: block; }
+
+.media .imgExt {
+  float: right;
+  margin-left: 10px; }
+
+/*********************
+TYPOGRAPHY
+*********************/
+/**
+ * Create a fully formed type style (sizing and vertical rhythm) by passing in a
+ * single value, e.g.:
+ *
+   `@include font-size(10px);`
+ *
+ * Thanks to @redclov3r for the `line-height` Sass:
+ * twitter.com/redclov3r/status/250301539321798657
+ */
+/**
+ * Style any number of headings in one fell swoop, e.g.:
+ *
+   .foo{
+       @include headings(1, 3){
+           color:#BADA55;
+       }
+    }
+ *
+ * With thanks to @lar_zzz, @paranoida, @rowanmanning and ultimately
+ * @thierrylemoulec for refining and improving my initial mixin.
+ */
+.inline {
+  display: inline; }
+
+.unselectable {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none; }
+
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ *
+   `@include vendor(border-radius, 4px);`
+ *
+ */
+.alert-help, .alert-info, .alert-error, .alert-success {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid; }
+
+.alert-help {
+  border-color: #e8dc59;
+  background: #ebe16f; }
+
+.alert-info {
+  border-color: #bfe4f4;
+  background: #d5edf8; }
+
+.alert-error {
+  border-color: #f8cdce;
+  background: #fbe3e4; }
+
+.alert-success {
+  border-color: #deeaae;
+  background: #e6efc2; }
+
+/*********************
+MEDIA QUERIES MIXIN
+*********************/
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/*********************
+CENTERING
+*********************/
+/* Center any element of any size in a container of any size.
+Supports modern browsers & IE8+: http://css-tricks.com/centering-in-the-unknown/
+*/
+/* This parent can be any width and height */
+.centered-wrap {
+  text-align: center; }
+
+/* The ghost, nudged to maintain perfect centering */
+.centered-wrap:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+  /* Adjusts for spacing */ }
+
+/* The element to be centered, can
+   also be of any width and height */
+.centered {
+  display: inline-block;
+  vertical-align: middle; }
+
+/*********************
+BUTTONS
+*********************/
+.button, .button:visited {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: 1px solid #454545;
+  border-top-color: #545454;
+  border-left-color: #545454;
+  padding: 4px 12px;
+  color: #fcfcfc;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  margin-bottom: 20px;
+  line-height: 21px;
+  border-radius: 4px;
+  background-color: #595959;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#666666), to(#595959));
+  background-image: -webkit-linear-gradient(top, #666666, #595959);
+  background-image: -moz-linear-gradient(top, #666666, #595959);
+  background-image: -o-linear-gradient(top, #666666, #595959);
+  background-image: linear-gradient(to bottom, #666666, #595959); }
+  .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
+    color: #fcfcfc;
+    border: 1px solid #454545;
+    border-top-color: #333333;
+    border-left-color: #333333;
+    background-color: #4d4d4d;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#4d4d4d));
+    background-image: -webkit-linear-gradient(top, #595959, #4d4d4d);
+    background-image: -moz-linear-gradient(top, #595959, #4d4d4d);
+    background-image: -o-linear-gradient(top, #595959, #4d4d4d);
+    background-image: linear-gradient(to bottom, #595959, #4d4d4d); }
+  .button:active, .button:visited:active {
+    background-color: #666666;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#666666));
+    background-image: -webkit-linear-gradient(top, #595959, #666666);
+    background-image: -moz-linear-gradient(top, #595959, #666666);
+    background-image: -o-linear-gradient(top, #595959, #666666);
+    background-image: linear-gradient(to bottom, #595959, #666666); }
+
+.blue-button, .blue-button:visited {
+  border-color: #a9daf1;
+  text-shadow: 0 1px 1px #a9daf1;
+  background-color: #bfe4f4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d5edf8), to(#bfe4f4));
+  background-image: -webkit-linear-gradient(top, #d5edf8, #bfe4f4);
+  background-image: -moz-linear-gradient(top, #d5edf8, #bfe4f4);
+  background-image: -o-linear-gradient(top, #d5edf8, #bfe4f4);
+  background-image: linear-gradient(to bottom, #d5edf8, #bfe4f4);
+  box-shadow: inset 0 0 3px white; }
+  .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
+    border-color: #93d1ed;
+    background-color: #a9daf1;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c4e6f5), to(#a9daf1));
+    background-image: -webkit-linear-gradient(top, #c4e6f5, #a9daf1);
+    background-image: -moz-linear-gradient(top, #c4e6f5, #a9daf1);
+    background-image: -o-linear-gradient(top, #c4e6f5, #a9daf1);
+    background-image: linear-gradient(to bottom, #c4e6f5, #a9daf1); }
+  .blue-button:active, .blue-button:visited:active {
+    background-color: #d5edf8;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#bfe4f4), to(#d5edf8));
+    background-image: -webkit-linear-gradient(top, #bfe4f4, #d5edf8);
+    background-image: -moz-linear-gradient(top, #bfe4f4, #d5edf8);
+    background-image: -o-linear-gradient(top, #bfe4f4, #d5edf8);
+    background-image: linear-gradient(to bottom, #bfe4f4, #d5edf8); }
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.scss stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+http://gridpak.com/ - Create your own responsive grid.
+
+The grid below is a combination of the 1140 grid and Twitter Boostrap. 
+I liked 1140 but Boostrap's grid was way more detailed so I merged them 
+together, let's see how this works out. If you want to use 1140, the original 
+values are commented out on each line.
+
+******************************************************************/
+.onecol {
+  width: 5.801104972%; }
+
+/* 4.85%;  } /* grid_1  */
+.twocol {
+  width: 14.364640883%; }
+
+/* 13.45%; } /* grid_2  */
+.threecol {
+  width: 22.928176794%; }
+
+/* 22.05%; } /* grid_3  */
+.fourcol {
+  width: 31.491712705%; }
+
+/* 30.75%; } /* grid_4  */
+.fivecol {
+  width: 40.055248616%; }
+
+/* 39.45%; } /* grid_5  */
+.sixcol {
+  width: 48.618784527%; }
+
+/* 48%;    } /* grid_6  */
+.sevencol {
+  width: 57.182320438000005%; }
+
+/* 56.75%; } /* grid_7  */
+.eightcol {
+  width: 65.74585634900001%; }
+
+/* 65.4%;  } /* grid_8  */
+.ninecol {
+  width: 74.30939226%; }
+
+/* 74.05%; } /* grid_9  */
+.tencol {
+  width: 82.87292817100001%; }
+
+/* 82.7%;  } /* grid_10 */
+.elevencol {
+  width: 91.436464082%; }
+
+/* 91.35%; } /* grid_11 */
+.twelvecol {
+  width: 99.999999993%; }
+
+/* 100%;   } /* grid_12 */
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+  position: relative;
+  float: left;
+  margin-left: 2.762430939%; }
+
+.first {
+  margin-left: 0; }
+
+.last {
+  float: right; }
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: 481px and Up Stylesheet
+
+This stylesheet is loaded for larger devices. It's set to 
+481px because at 480px it would load on a landscaped iPhone.
+This isn't ideal because then you would be loading all those
+extra styles on that same mobile connection. 
+
+A word of warning. This size COULD be a larger mobile device,
+so you still want to keep it pretty light and simply expand
+upon your base.scss styles.
+
+******************************************************************/
+/*********************
+HEADER STYLES
+*********************/
+/*********************
+NAVIGATION STYLES
+*********************/
+/* .menu is clearfixed inside mixins.scss */
+.menu {
+  /* end .menu ul */ }
+  .menu ul {
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .menu ul li {
+      /*
+      plan your menus and drop-downs wisely.
+      */ }
+      .menu ul li a {
+        /*
+        you can use hover styles here even though this size
+        has the possibility of being a mobile device.
+        */ }
+
+/* end .menu */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* entry content */
+.entry-content {
+  /* at this larger size, we can start to align images */ }
+  .entry-content .alignleft, .entry-content img.alignleft {
+    margin-right: 1.5em;
+    display: inline;
+    float: left; }
+  .entry-content .alignright, .entry-content img.alignright {
+    margin-left: 1.5em;
+    display: inline;
+    float: right; }
+  .entry-content .aligncenter, .entry-content img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both; }
+
+/* end .entry-content */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+check your menus here. do they look good?
+do they need tweaking?
+*/
+/* end .footer-links */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+html {
+  font: 1.375em/1.5 "Merriweather", "Georgia", Adobe Garamond Pro, Cambria, Times New Roman, Times, serif;
+  background: url("http://www.baselineme.com/33") center top repeat; }
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+.wrap {
+  max-width: 960px; }
+
+/*********************
+HEADER STYLES
+*********************/
+.header-huge {
+  background-color: #1e1e1e; }
+
+/*********************
+NAVIGATION STYLES
+*********************/
+.nav {
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */ }
+  .nav li {
+    position: relative;
+    /*
+    plan your menus and drop-downs wisely.
+    */
+    /* showing sub-menus */ }
+    .nav li a {
+      border-bottom: 0;
+      /*
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */ }
+    .nav li ul.sub-menu,
+    .nav li ul.children {
+      margin-top: 0;
+      border: 1px solid #ccc;
+      border-top: 0;
+      position: absolute;
+      display: none;
+      z-index: 8999;
+      /* highlight sub-menu current page */ }
+      .nav li ul.sub-menu li,
+      .nav li ul.children li {
+        /*
+        if you need to go deeper, go nuts
+        just remember deeper menus suck
+        for usability. k, bai.
+        */ }
+        .nav li ul.sub-menu li a,
+        .nav li ul.children li a {
+          padding-left: 10px;
+          border-right: 0;
+          display: block;
+          width: 180px;
+          border-bottom: 1px solid #ccc; }
+        .nav li ul.sub-menu li:last-child a,
+        .nav li ul.children li:last-child a {
+          border-bottom: 0; }
+    .nav li:hover ul {
+      top: auto;
+      display: block; }
+
+/* end .nav */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.widget ul li {
+  /* deep nesting */ }
+  .widget ul li ul {
+    padding-left: 1em; }
+
+/* links widget */
+/* meta widget */
+/* pages widget */
+/* recent-posts widget */
+/* archives widget */
+/* tag-cloud widget */
+/* calendar widget */
+/* category widget */
+/* recent-comments widget */
+/* search widget */
+/* text widget */
+/*********************
+FOOTER STYLES
+*********************/
+.footer {
+  max-width: 960px; }
+
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer-links ul li {
+  /*
+  be careful with the depth of your menus.
+  it's very rare to have multi-depth menus in
+  the footer.
+  */ }
+
+/* end .footer-links */
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop. 
+
+******************************************************************/
+/*********************
+HEADER STYLES
+*********************/
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* 
+you can call the larger styles if you want, but there's really no need 
+*/
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+
+.lt-ie8 .class { ... }
+
+*/

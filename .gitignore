@@ -1,0 +1,36 @@
+# Template .gitignore file for git-managed WordPress projects.
+
+# Ignore everything in the root, unless specified otherwise
+/*
+!.gitignore
+!wp-content/
+!config/
+!index.php
+!wordpress
+!README.md
+!LICENSE.md
+!wp-config.php
+
+# Ignore everything in the "wp-content" directory, except the "plugins"
+# and "themes" directories.
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+
+# Ignore everything in the "config" directory, except the template file
+config/*
+!config/index.php
+!config/wp-config-sample.dev.php
+!config/wp-config-sample.prod.php
+!config/wp-config-sample.salts.php
+
+# Ignore everything in the "plugins" directory, unless specified otherwise
+wp-content/plugins/*
+# !wp-content/plugins/my-single-file-plugin.php
+# !wp-content/plugins/my-directory-plugin/
+
+# Ignore everything in the "themes" directory, unless specified otherwise
+wp-content/themes/*
+!wp-content/themes/cappuccino/
+wp-content/themes/cappuccino/.DS_Store
+wp-content/themes/cappuccino/images/.DS_Store

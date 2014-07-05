@@ -1,0 +1,76 @@
+/******************************************************************
+HEADINGS (H1-H6)
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	text-rendering: optimizelegibility;
+	font-weight: 400;
+	/* removing text decoration from all headline links */
+	a {
+		text-decoration: none;
+	}
+}
+
+h1, .h1 {
+	@include rem-and-px(font-size, 3rem);
+	font-family: $sans-serif;
+	font-weight: 700;	
+	line-height: 1em;
+	letter-spacing: -0.04em;
+	margin-bottom: 0;
+}	
+
+h2, .h2 {
+	@include rem-and-px(font-size, 1.4rem);	
+	font-family: $sans-serif;
+	font-weight: 700;	
+}
+
+h3, .h3 {
+	@include rem-and-px(font-size, 1.1rem);
+	font-family: $sans-serif;
+	font-weight: 400;	
+	margin-bottom: 0;
+	color: $gray;
+	&:after {
+		content: "";
+		display: inline-block;
+		width: 100%;
+		margin-bottom: 13.5px;
+		margin-bottom: $half-spacing-unit;
+		border-bottom: 2px solid $light-gray;
+	}
+}
+
+h4, .h4 {
+	@include rem-and-px(font-size, 0.8rem);
+	@include rem-and-px(line-height, $half-spacing-unit);
+	@include rem-and-px(min-height, $base-spacing-unit);
+	font-family: $sans-serif;
+	font-weight: 400;
+	color: $white;
+	background: $black;
+	display: inline;
+ 	box-shadow: $half-spacing-unit 0 0 $black, -$half-spacing-unit 0 0 $black;
+	//@include rem-and-px(text-indent, $base-spacing-unit);
+	@include rem-and-px(margin-right, $base-spacing-unit);
+	@include rem-and-px(padding-top, $half-spacing-unit/2);
+	@include rem-and-px(padding-bottom, $half-spacing-unit/2);
+	&:after {
+		content: '';
+		display: block;
+	}
+	a, a:visited {
+		color: $white;
+	}
+}
+
+h5, .h5 {
+	@include rem-and-px(font-size, 0.88rem);
+	font-style: italic;
+	font-weight: 300;
+}
+
+h6, .h6 {
+	@include rem-and-px(font-size, 0.66rem);
+}

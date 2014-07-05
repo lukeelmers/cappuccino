@@ -1,0 +1,82 @@
+/*********************
+GENERAL STYLES
+*********************/
+
+html {
+	font-size: ($base-font-size/16px)*1em;
+	line-height: ($line-height-ratio)*1em;
+	font-family: $base-font-family;
+	color: $body-text-color;
+	background-color: $body-bg-color;
+    overflow-y: scroll;
+    min-height: 100%;	
+	//background: url('http://www.baselineme.com/27') center top repeat;
+	@include breakpoint(small) {
+		font-size: (22px/16px)*1em;		
+		//background: url('http://www.baselineme.com/33') center top repeat;	
+	}	
+	@include breakpoint(large) {
+		font-size: (24px/16px)*1em;	 
+		//background: url('http://www.baselineme.com/36') center top repeat;
+	}
+}
+
+body, div, dl, dt, dd, ul, ol, li,
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, 
+pre, form, fieldset, input, textarea,
+p, blockquote, th, td { 
+	@include rem-and-px(margin-bottom, $base-spacing-unit);
+}
+
+::-moz-selection {
+	background-color: $black;
+	color: $white;
+}
+
+::selection {
+	background-color: $black;
+	color: $white;
+}
+
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	max-width: $body-max-width;
+	margin-left: auto;
+	margin-right: auto;
+	@include rem-and-px(padding-left, ($half-spacing-unit));
+	@include rem-and-px(padding-right, ($half-spacing-unit));
+	@include breakpoint(medium) { padding-left: 0; padding-right: 0; }	
+}
+
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+	color: $link-color;
+
+	/* on hover */
+	&:hover, &:focus {
+		color: $link-hover;
+	}
+
+	/* on click */
+	&:active {
+
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}

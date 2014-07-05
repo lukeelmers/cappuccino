@@ -1,0 +1,72 @@
+/*********************
+TYPOGRAPHY
+*********************/
+
+//@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+//@import url(http://fonts.googleapis.com/css?family=Noticia+Text:400,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,400,400italic,700,700italic,900,900italic,300);
+//@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200italic);
+
+$sans-serif:        'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             'Merriweather', "Georgia", Adobe Garamond Pro, Cambria, Times New Roman, Times, serif;
+//$source-sans-pro:   'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$base-font-family: $serif;
+$base-font-size: 18px;
+$base-line-height: 27px;
+
+// Inspired by https://github.com/csswizardry/inuit.css
+$base-spacing-unit: ($base-line-height/$base-font-size)*1rem;
+$half-spacing-unit: $base-spacing-unit / 2;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+/*********************
+COLORS
+*********************/
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$black:             #1e1e1e;
+$white:             #fcfcfc;
+$gray:				#666;
+$light-gray:		#eee;
+
+$link-color:        $gray;
+$link-hover:        darken($link-color, 9%);
+$highlight-color:	#3299CC;
+$body-text-color:	$black;
+$body-bg-color:		$white;
+$byline-color:		$gray;
+$header-bg-color:	$black;
+
+/*********************
+BREAKPOINTS
+*********************/
+$bp-xlarge:   		85em;
+$bp-large:    		78em;
+$bp-medium:   		65em;
+$bp-small:    		40em;
+$bp-mobile:   		25em;
+
+/*********************
+POSITIONING
+*********************/
+
+$body-max-width:	35em;
+
+//$logo-width:		 66px;
+//$logo-width-huge:	198px;
+
+// $base-header-height: 		100px;
+// $handheld-header-height:	450px;
+// $small-header-height:		450px;
+// $medium-header-height:		500px;
+// $large-header-height:		550px;
+
+// $padding-s:			3px;
+// $padding-m:			33px;
+// $padding-l:			66px;
