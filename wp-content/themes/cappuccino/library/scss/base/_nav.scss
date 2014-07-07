@@ -11,13 +11,16 @@ and more scalable.
 */
 
 .nav {
-	@include rem-and-px(padding-top, $half-spacing-unit);
+	@include rem-and-px(padding-top, ($half-spacing-unit)-0.1);
 	float: right;
+	font-family: $sans-serif;
+	font-weight: 700;
+	text-transform: lowercase;
+	font-variant: small-caps;		
 
 	li {
 		display: inline-block;
 		@include rem-and-px(padding-left, $base-spacing-unit);
-		@include breakpoint(small) { @include rem-and-px(padding-left, $base-spacing-unit*2); }
 
 		&:before {}
 		&:after {}
@@ -29,14 +32,9 @@ and more scalable.
 			[class^="icon-"], [class*=" icon-"] {
 				@include rem-and-px(font-size, 1.4rem);
 			}
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-			&:hover, &:focus {
 
+			&:hover, &:focus {
+				color: $link-hover;
 			}
 		}
 

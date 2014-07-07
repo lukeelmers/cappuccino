@@ -1252,9 +1252,13 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 .nav {
-  padding-top: 13.5px;
-  padding-top: 0.75rem;
+  padding-top: 11.7px;
+  padding-top: 0.65rem;
   float: right;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: lowercase;
+  font-variant: small-caps;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */ }
@@ -1270,21 +1274,13 @@ and more scalable.
     http://www.alistapart.com/articles/organizing-mobile/
     */
     /* showing sub-menus */ }
-    @media (min-width: 40em) {
-      .nav li {
-        padding-left: 54px;
-        padding-left: 3rem; } }
     .nav li a {
-      text-decoration: none;
-      /*
-      remember this is for mobile ONLY, so there's no need
-      to even declare hover styles here, you can do it in
-      the style.scss file where it's relevant. We want to
-      keep this file as small as possible!
-      */ }
+      text-decoration: none; }
       .nav li a [class^="icon-"], .nav li a [class*=" icon-"] {
         font-size: 25.2px;
         font-size: 1.4rem; }
+      .nav li a:hover, .nav li a:focus {
+        color: #4f4f4f; }
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;

@@ -1,5 +1,10 @@
 # Template .gitignore file for git-managed WordPress projects.
 
+# Files to ignore globally
+*.DS_Store
+*.map
+*.sass-cache
+
 # Ignore everything in the root, unless specified otherwise
 /*
 !.gitignore
@@ -32,7 +37,3 @@ wp-content/plugins/*
 # Ignore everything in the "themes" directory, unless specified otherwise
 wp-content/themes/*
 !wp-content/themes/cappuccino/
-wp-content/themes/cappuccino/.DS_Store
-wp-content/themes/cappuccino/images/.DS_Store
-wp-content/themes/cappuccino/library/scss/.sass-cache
-wp-content/themes/cappuccino/library/css/*.map
