@@ -2,7 +2,6 @@
 
 # Files to ignore globally
 *.DS_Store
-*.map
 *.sass-cache
 
 # Ignore everything in the root, unless specified otherwise
