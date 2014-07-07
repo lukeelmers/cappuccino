@@ -26,7 +26,6 @@ SIDEBARS & ASIDES
 		}
 	}
 
-
 	/* links widget */
 	.widget_links {}
 	.widget_links ul {}
@@ -59,7 +58,6 @@ SIDEBARS & ASIDES
 		margin-left: -$half-spacing-unit;
 		border-bottom: 2px dotted $light-gray;
 			&:last-child { border-bottom: none; }
-
 	}
 	.widget_recent_entries ul li a { 
 		float: right;
@@ -134,4 +132,3 @@ SIDEBARS & ASIDES
 	.textwidget {}
 	.widget_text {}
 	.textwidget p {}
-
