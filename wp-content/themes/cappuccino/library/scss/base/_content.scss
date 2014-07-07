@@ -51,6 +51,9 @@ POSTS & CONTENT STYLES
 	overflow: hidden;
 	position: relative;
 	//background-color: $body-bg-color;
+	a {
+		&:hover { color: $link-hover; }
+	}
 }
 
 	#inner-content {}
@@ -248,6 +251,25 @@ POSTS & CONTENT STYLES
 			text-align: center;
 
 		} /* end .article-footer */
+
+		.social-share {
+			a { 
+				text-decoration: none;
+			}
+		}
+
+		.social-share-icon {
+			@include rem-and-px(font-size, 1.8rem);
+		}
+
+		.social-share-text {
+			@include rem-and-px(font-size, 0.9rem);			
+			@include rem-and-px(margin-top, -0.3rem);
+			font-family: $sans-serif;
+			font-weight: 700;
+			text-transform: lowercase;
+			font-variant: small-caps;
+		}
 
 		.wp-caption {
 			max-width: 100%;

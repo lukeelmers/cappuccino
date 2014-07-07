@@ -32,6 +32,12 @@
 									<!-- <?php printf( '<h4>' . __( '%1$s', 'bonestheme' ), get_the_category_list('</h4>&nbsp;<h4>') . '</h4>' ); ?>	-->							
 									<!-- <?php the_tags( '<h6 class="tags"><span class="tags-title">' . __( 'Tagged:', 'bonestheme' ) . '</span> ', ', ', '</h6>' ); ?> -->
 									<p>&#10033; &#10033; &#10033;</p><br /> <!-- heavy asterisks -->
+									<div class="social-share">
+										<a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php the_permalink(); ?>&via=lukeelmers" title="Discuss on Twitter" target="_blank">
+											<span class="social-share-icon"><i class="icon-twitter"></i></span>
+											<p class="social-share-text">Discuss</p>
+										</a>
+									</div>
 								
 								</footer> <!-- end article footer -->
 
