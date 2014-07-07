@@ -71,28 +71,38 @@ HEADER STYLES
 		@include rem-and-px(font-size, 1.2rem);
 	}
 
-	.marquee-image {
-		/* Based on Doug Neiner's technique: http://css-tricks.com/perfect-full-page-background-image/ */
-		/* Set rules to fill background */
-		min-width: 1024px;
-		z-index: -999999;
-
-		/* Set up proportionate scaling */
-		width: 100%;
-		height: auto;
-
-		/* Set up positioning */
+	.story-cover {
 		position: absolute;
 		top: 0;
 		left: 0;
+		width: 100%;
+		height: 100%; /* Temporary for older browsers. TODO: look into vh polyfill */
+		height: 100vh;
+		overflow: hidden;
 	}
 
-		@media screen and (max-width: 1024px) { /* Specific to this particular image */
-			.marquee-image {
-				left: 50%;
-				margin-left: -512px;   /* 50% */
-			}
+		.marquee-image {
+			/* Based on Doug Neiner's technique: http://css-tricks.com/perfect-full-page-background-image/ */
+			/* Set rules to fill background */
+			min-width: 1024px;
+			z-index: -999999;
+
+			/* Set up proportionate scaling */
+			width: 100%;
+			height: auto;
+
+			/* Set up positioning */
+			position: absolute;
+			top: 0;
+			left: 0;
 		}
+
+			@media screen and (max-width: 1024px) { /* Specific to this particular image */
+				.marquee-image {
+					left: 50%;
+					margin-left: -512px;   /* 50% */
+				}
+			}
 
 
 .text-white { 

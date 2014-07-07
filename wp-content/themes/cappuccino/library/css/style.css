@@ -1209,6 +1209,16 @@ HEADER STYLES
   font-size: 21.6px;
   font-size: 1.2rem; }
 
+.story-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Temporary for older browsers. TODO: look into vh polyfill */
+  height: 100vh;
+  overflow: hidden; }
+
 .marquee-image {
   /* Based on Doug Neiner's technique: http://css-tricks.com/perfect-full-page-background-image/ */
   /* Set rules to fill background */
@@ -1357,24 +1367,30 @@ POSTS & CONTENT STYLES
     color: #4f4f4f; }
 
 .marquee-page {
+  /* Temporary for older browsers. TODO: look into vh polyfill */
   padding-top: 675px;
-  padding-top: 37.5rem; }
+  padding-top: 37.5rem;
+  padding-top: 100vh; }
   @media (min-width: 40em) {
     .marquee-page {
       padding-top: 540px;
-      padding-top: 30rem; } }
+      padding-top: 30rem;
+      padding-top: 100vh; } }
   @media (min-width: 65em) {
     .marquee-page {
       padding-top: 594px;
-      padding-top: 33rem; } }
+      padding-top: 33rem;
+      padding-top: 100vh; } }
   @media (min-width: 78em) {
     .marquee-page {
       padding-top: 621px;
-      padding-top: 34.5rem; } }
+      padding-top: 34.5rem;
+      padding-top: 100vh; } }
   @media (min-width: 85em) {
     .marquee-page {
       padding-top: 729px;
-      padding-top: 40.5rem; } }
+      padding-top: 40.5rem;
+      padding-top: 100vh; } }
   .marquee-page .icon-arrow-down {
     color: #fcfcfc;
     display: block;

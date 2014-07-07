@@ -59,11 +59,15 @@ POSTS & CONTENT STYLES
 	#inner-content {}
 
 	.marquee-page {
-		@include rem-and-px(padding-top, ($base-spacing-unit * 25));
-			@include breakpoint(small) { @include rem-and-px(padding-top, ($base-spacing-unit * 20)); }
-			@include breakpoint(medium) { @include rem-and-px(padding-top, ($base-spacing-unit * 22)); }
-			@include breakpoint(large) { @include rem-and-px(padding-top, ($base-spacing-unit * 23)); }
-			@include breakpoint(xlarge) { @include rem-and-px(padding-top, ($base-spacing-unit * 27)); }
+
+		/* Temporary for older browsers. TODO: look into vh polyfill */
+			@include rem-and-px(padding-top, ($base-spacing-unit * 25));
+			padding-top: 100vh;
+				@include breakpoint(small) { @include rem-and-px(padding-top, ($base-spacing-unit * 20)); padding-top: 100vh; }
+				@include breakpoint(medium) { @include rem-and-px(padding-top, ($base-spacing-unit * 22)); padding-top: 100vh; }
+				@include breakpoint(large) { @include rem-and-px(padding-top, ($base-spacing-unit * 23)); padding-top: 100vh; }
+				@include breakpoint(xlarge) { @include rem-and-px(padding-top, ($base-spacing-unit * 27)); padding-top: 100vh; }
+			
 		.icon-arrow-down {
 			color: $white;
 			display: block;
