@@ -58,10 +58,6 @@ POSTS & CONTENT STYLES
 
 	#inner-content {}
 
-	.homepage {
-		@include rem-and-px(padding-top, ($base-spacing-unit * 4));
-	}
-
 	.marquee-page {
 		@include rem-and-px(padding-top, ($base-spacing-unit * 25));
 			@include breakpoint(small) { @include rem-and-px(padding-top, ($base-spacing-unit * 20)); }

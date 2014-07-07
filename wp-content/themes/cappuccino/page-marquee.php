@@ -41,7 +41,7 @@ Template Name: Marquee Homepage
 												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
 										</section>
 										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the page-custom.php template.', 'bonestheme' ); ?></p>
+												<p><?php _e( 'This is the error message in the page-marquee.php template.', 'bonestheme' ); ?></p>
 										</footer>
 									</article>
 

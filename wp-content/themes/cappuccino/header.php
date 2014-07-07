@@ -43,7 +43,7 @@
 
 		<div id="container" class="container">
 
-		<?php if ( !is_home() && has_post_thumbnail( $post->ID ) ): ?>
+		<?php if ( is_home() || has_post_thumbnail( $post->ID ) ): ?>
 			<header class="header text-white clearfix" role="banner">						
 		<?php else: ?>
 			<header class="header clearfix" role="banner">
@@ -57,17 +57,17 @@
 					</div>
 
 					<!-- site title -->
-					<?php if ( is_page_template('page-marquee.php') ): ?>
+					<?php if ( !is_home() && !is_page_template('page-marquee.php') ): ?>
+						<div class="marquee">
+							<a href="<?php echo home_url(); ?>" rel="nofollow">
+								<h1 class="marquee-title"><?php bloginfo('name'); ?></h1>
+							</a>
+						</div>
+					<?php else: ?>						
 						<div class="marquee-huge">
 							<a href="<?php echo home_url(); ?>" rel="nofollow">
 								<h1 class="marquee-title-huge"><?php bloginfo('name'); ?></h1>
 								<h2 class="marquee-subtitle-huge"><?php bloginfo('description'); ?></h2>
-							</a>
-						</div>
-					<?php else: ?>						
-						<div class="marquee">
-							<a href="<?php echo home_url(); ?>" rel="nofollow">
-								<h1 class="marquee-title"><?php bloginfo('name'); ?></h1>
 							</a>
 						</div>
 					<?php endif; ?>						
