@@ -65,8 +65,10 @@ jQuery(document).ready(function($) {
         
     }
     
-	
 	// add all your scripts here
+
+    // Buggyfill for viewport units in iOS7
+    window.viewportUnitsBuggyfill.init();    
 	
  
 }); /* end of as page load scripts */

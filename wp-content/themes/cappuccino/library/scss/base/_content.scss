@@ -60,7 +60,7 @@ POSTS & CONTENT STYLES
 
 	.marquee-page {
 
-		/* Temporary for older browsers. TODO: look into vh polyfill */
+		/* Use px values & media queries for browsers that don't support vh */
 			@include rem-and-px(padding-top, ($base-spacing-unit * 25));
 			padding-top: 100vh;
 				@include breakpoint(small) { @include rem-and-px(padding-top, ($base-spacing-unit * 20)); padding-top: 100vh; }

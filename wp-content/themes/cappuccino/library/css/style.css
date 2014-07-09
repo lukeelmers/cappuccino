@@ -1367,7 +1367,7 @@ POSTS & CONTENT STYLES
     color: #4f4f4f; }
 
 .marquee-page {
-  /* Temporary for older browsers. TODO: look into vh polyfill */
+  /* Use px values & media queries for browsers that don't support vh */
   padding-top: 675px;
   padding-top: 37.5rem;
   padding-top: 100vh; }
