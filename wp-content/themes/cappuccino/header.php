@@ -54,7 +54,7 @@
 					<!-- logo -->
 					<div id="logo">
 						<a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/le_logo_circle.png" alt="LukeElmers.com" /></a>
-					</div>
+					</div>	
 
 					<!-- site title -->
 					<?php if ( !is_home() && !is_page_template('page-marquee.php') ): ?>
@@ -63,17 +63,18 @@
 								<h1 class="marquee-title"><?php bloginfo('name'); ?></h1>
 							</a>
 						</div>
-					<?php else: ?>						
+					<?php else: ?>
 						<div class="marquee-huge text-white">
 							<h1 class="marquee-title-huge"><?php bloginfo('name'); ?></h1>
 							<h2 class="marquee-subtitle-huge"><?php bloginfo('description'); ?></h2>
 						</div>
-					<?php endif; ?>						
+					<?php endif; ?>	
 
+					<!-- nav -->
 					<nav role="navigation">
 						<?php bones_main_nav(); ?>
 					</nav>
-				
+
 				</div> <!-- end #inner-header -->
 
 			</header> <!-- end header -->

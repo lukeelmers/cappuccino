@@ -39,21 +39,19 @@ HEADER STYLES
 .marquee-huge {
 	text-align: left;
 	position: absolute;
-	top: 0;
-	left: 0;
-	@include rem-and-px(margin-top, $base-spacing-unit*5);
-	@include rem-and-px(margin-left, $half-spacing-unit);
+	@include rem-and-px(margin-top, $base-spacing-unit*6);
+	margin-top: 30vh;
 	@include breakpoint(small) {
-		@include rem-and-px(margin-top, $base-spacing-unit*6);
-		@include rem-and-px(margin-left, $base-spacing-unit*2);		
-	}
+		@include rem-and-px(margin-top, $base-spacing-unit*7);
+		margin-top: 30vh;
+	}	
 	@include breakpoint(medium) {
 		@include rem-and-px(margin-top, $base-spacing-unit*8);
-		@include rem-and-px(margin-left, $base-spacing-unit*6);		
+		margin-top: 30vh;
 	}
 	@include breakpoint(large) {
-		@include rem-and-px(margin-top, $base-spacing-unit*8);
-		@include rem-and-px(margin-left, $base-spacing-unit*7);		
+		@include rem-and-px(margin-top, $base-spacing-unit*9);
+		margin-top: 40vh;
 	}
 }
 

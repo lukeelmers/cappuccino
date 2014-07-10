@@ -1179,30 +1179,24 @@ HEADER STYLES
 .marquee-huge {
   text-align: left;
   position: absolute;
-  top: 0;
-  left: 0;
-  margin-top: 135px;
-  margin-top: 7.5rem;
-  margin-left: 13.5px;
-  margin-left: 0.75rem; }
+  margin-top: 162px;
+  margin-top: 9rem;
+  margin-top: 30vh; }
   @media (min-width: 40em) {
     .marquee-huge {
-      margin-top: 162px;
-      margin-top: 9rem;
-      margin-left: 54px;
-      margin-left: 3rem; } }
+      margin-top: 189px;
+      margin-top: 10.5rem;
+      margin-top: 30vh; } }
   @media (min-width: 65em) {
     .marquee-huge {
       margin-top: 216px;
       margin-top: 12rem;
-      margin-left: 162px;
-      margin-left: 9rem; } }
+      margin-top: 30vh; } }
   @media (min-width: 78em) {
     .marquee-huge {
-      margin-top: 216px;
-      margin-top: 12rem;
-      margin-left: 189px;
-      margin-left: 10.5rem; } }
+      margin-top: 243px;
+      margin-top: 13.5rem;
+      margin-top: 40vh; } }
 
 .marquee-subtitle-huge {
   font-size: 21.6px;
