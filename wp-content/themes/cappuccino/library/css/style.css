@@ -636,6 +636,13 @@ TOOLS
 .inline {
   display: inline; }
 
+.text-white, .text-white a, .text-white .byline {
+  color: #fcfcfc;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 0px 5px rgba(0, 0, 0, 0.1); }
+
+.background-white {
+  background: rgba(255, 255, 255, 0.5); }
+
 .unselectable {
   -webkit-user-select: none;
   /* Chrome all / Safari all */
@@ -658,11 +665,11 @@ CENTERING
 Supports modern browsers & IE8+: http://css-tricks.com/centering-in-the-unknown/
 */
 /* This parent can be any width and height */
-.centered-wrap {
+.centered-wrap, .header {
   text-align: center; }
 
 /* The ghost, nudged to maintain perfect centering */
-.centered-wrap:before {
+.centered-wrap:before, .header:before {
   content: '';
   display: inline-block;
   height: 100%;
@@ -672,7 +679,7 @@ Supports modern browsers & IE8+: http://css-tricks.com/centering-in-the-unknown/
 
 /* The element to be centered, can
    also be of any width and height */
-.centered {
+.centered, #inner-header, .nav li {
   display: inline-block;
   vertical-align: middle; }
 
@@ -1133,21 +1140,32 @@ h6, #allowed_tags, .commentlist .vcard time, .h6 {
 HEADER STYLES
 *********************/
 .header {
-  color: #1e1e1e;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  color: #1e1e1e;
   z-index: 1;
-  height: 81px;
-  height: 4.5rem;
+  padding-left: 6.75px;
+  padding-left: 0.375rem;
+  padding-right: 6.75px;
+  padding-right: 0.375rem;
   padding-top: 13.5px;
   padding-top: 0.75rem;
   padding-bottom: 13.5px;
-  padding-bottom: 0.75rem; }
+  padding-bottom: 0.75rem;
+  margin-top: -27px;
+  margin-top: -1.5rem;
+  /* TODO: Remove hacky positioning fix for screen widths between 640 & 780 */ }
   .header a {
     color: #1e1e1e;
     text-decoration: none; }
+  @media (min-width: 40em) {
+    .header {
+      margin-top: 0;
+      /* TODO: Remove hacky positioning fix */
+      padding-left: 0;
+      padding-right: 0; } }
 
 .marquee {
   display: none; }
@@ -1157,8 +1175,9 @@ HEADER STYLES
       float: left;
       text-align: left;
       line-height: 1em;
-      padding-top: 13.5px;
-      padding-top: 0.75rem;
+      margin: 0;
+      padding-top: 9px;
+      padding-top: 0.5rem;
       padding-left: 27px;
       padding-left: 1.5rem;
       padding-right: 27px;
@@ -1238,18 +1257,22 @@ HEADER STYLES
     left: 50%;
     margin-left: -512px;
     /* 50% */ } }
-.text-white, .text-white a, .text-white .byline {
-  color: #fcfcfc;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 0px 5px rgba(0, 0, 0, 0.1), 0px 0px 5px rgba(0, 0, 0, 0.1); }
-
 .header-huge > #inner-header {
   background-color: inherit; }
 
-#inner-header #logo {
-  float: left; }
-  #inner-header #logo img {
+#inner-header {
+  width: 100%;
+  padding: 0;
+  margin: 0; }
+  #inner-header #logo {
+    float: left;
+    margin: 0;
     width: 47.25px;
-    width: 2.625rem; }
+    width: 2.625rem;
+    height: 47.25px;
+    height: 2.625rem; }
+    #inner-header #logo img {
+      width: 100%; }
 
 /*********************
 NAVIGATION STYLES
@@ -1262,18 +1285,20 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 .nav {
-  padding-top: 11.7px;
-  padding-top: 0.65rem;
-  float: right;
+  text-align: right;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   text-transform: lowercase;
   font-variant: small-caps;
+  margin: 0;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */ }
   .nav li {
-    display: inline-block;
+    padding-top: 13.5px;
+    padding-top: 0.75rem;
+    line-height: 0;
+    margin: 0;
     padding-left: 27px;
     padding-left: 1.5rem;
     /*
@@ -1284,6 +1309,8 @@ and more scalable.
     http://www.alistapart.com/articles/organizing-mobile/
     */
     /* showing sub-menus */ }
+    .nav li:first-child {
+      padding-left: 0; }
     .nav li a {
       text-decoration: none; }
       .nav li a [class^="icon-"], .nav li a [class*=" icon-"] {

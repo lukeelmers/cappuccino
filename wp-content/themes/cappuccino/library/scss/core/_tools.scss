@@ -29,6 +29,21 @@ TOOLS
 .text-right  { text-align: right; }
 .inline 	 { display: inline; }
 
+// text & background effects
+.text-white { 
+  color: $white;
+  text-shadow: 
+    0px 0px 5px rgba(0,0,0,0.1), 
+    0px 0px 5px rgba(0,0,0,0.1),            
+    0px 0px 5px rgba(0,0,0,0.1), 
+    0px 0px 5px rgba(0,0,0,0.1);
+  & a, & .byline { @extend .text-white; }
+}
+
+.background-white {
+  background: rgba(255,255,255,0.5);
+}
+
 // Disable text selection to make copy/paste easier [http://css-tricks.com/almanac/properties/u/user-select/]
 .unselectable {
   -webkit-user-select: none;  /* Chrome all / Safari all */

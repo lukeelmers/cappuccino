@@ -3,16 +3,24 @@ HEADER STYLES
 *********************/
 
 .header {
-	color: $black;
+	@extend .centered-wrap;
 	position: absolute;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
+	color: $black;
 	z-index: 1;
 	a { color: $black; text-decoration: none; }
-	@include rem-and-px(height, ($base-spacing-unit * 3));
+	@include rem-and-px(padding-left, $half-spacing-unit/2);
+	@include rem-and-px(padding-right, $half-spacing-unit/2);
 	@include rem-and-px(padding-top, $half-spacing-unit);
 	@include rem-and-px(padding-bottom, $half-spacing-unit);
+	@include rem-and-px(margin-top, -$base-spacing-unit); 	/* TODO: Remove hacky positioning fix for screen widths between 640 & 780 */
+	@include breakpoint(small) {
+		margin-top: 0; /* TODO: Remove hacky positioning fix */
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .marquee {
@@ -22,7 +30,8 @@ HEADER STYLES
 		float: left;
 		text-align: left;
 		line-height: 1em;
-		@include rem-and-px(padding-top, $half-spacing-unit);
+		margin: 0;
+		@include rem-and-px(padding-top, $half-spacing-unit/1.5);
 		@include rem-and-px(padding-left, $base-spacing-unit);
 		@include rem-and-px(padding-right, $base-spacing-unit);		
 	}
@@ -104,18 +113,6 @@ HEADER STYLES
 				}
 			}
 
-
-.text-white { 
-	color: $white;
-	text-shadow: 
-		0px 0px 5px rgba(0,0,0,0.1), 
-		0px 0px 5px rgba(0,0,0,0.1), 						
-		0px 0px 5px rgba(0,0,0,0.1), 
-		0px 0px 5px rgba(0,0,0,0.1);
-	& a, & .byline { @extend .text-white; }
-}
-
-
 	.header-huge {
 		// height: $small-header-height;	
 		// background-color: $header-bg-color;
@@ -136,6 +133,10 @@ HEADER STYLES
 
 	#inner-header {
 	
+		@extend .centered;
+		width: 100%;
+		padding: 0;
+		margin: 0;
 		//background-color: $white;
 		//height: $base-header-height;
 		// border-bottom: 1px solid $light-gray;
@@ -145,12 +146,13 @@ HEADER STYLES
 		#logo {
 			
 			float: left;
+			margin: 0;
+			@include rem-and-px(width, ($base-spacing-unit * 1.75));
+			@include rem-and-px(height, ($base-spacing-unit * 1.75));
 
 			a {}
 			
-			img {
-				@include rem-and-px(width, ($base-spacing-unit * 1.75));
-			}
+			img { width: 100%; }
 
 		}
 

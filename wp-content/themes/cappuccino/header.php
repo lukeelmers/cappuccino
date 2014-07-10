@@ -44,12 +44,12 @@
 		<div id="container" class="container">
 
 		<?php if ( is_home() || has_post_thumbnail( $post->ID ) ): ?>
-			<header class="header text-white clearfix" role="banner">						
+			<header class="header background-white clearfix" role="banner">						
 		<?php else: ?>
 			<header class="header clearfix" role="banner">
 		<?php endif; ?>
 
-				<div id="inner-header" class="wrap text-center">
+				<div id="inner-header" class="wrap">
 
 					<!-- logo -->
 					<div id="logo">
@@ -64,11 +64,9 @@
 							</a>
 						</div>
 					<?php else: ?>						
-						<div class="marquee-huge">
-							<a href="<?php echo home_url(); ?>" rel="nofollow">
-								<h1 class="marquee-title-huge"><?php bloginfo('name'); ?></h1>
-								<h2 class="marquee-subtitle-huge"><?php bloginfo('description'); ?></h2>
-							</a>
+						<div class="marquee-huge text-white">
+							<h1 class="marquee-title-huge"><?php bloginfo('name'); ?></h1>
+							<h2 class="marquee-subtitle-huge"><?php bloginfo('description'); ?></h2>
 						</div>
 					<?php endif; ?>						
 

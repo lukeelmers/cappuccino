@@ -11,16 +11,22 @@ and more scalable.
 */
 
 .nav {
-	@include rem-and-px(padding-top, ($half-spacing-unit)-0.1);
-	float: right;
+	text-align: right;
 	font-family: $sans-serif;
 	font-weight: 700;
 	text-transform: lowercase;
-	font-variant: small-caps;		
+	font-variant: small-caps;
+	margin: 0;
 
 	li {
-		display: inline-block;
-		@include rem-and-px(padding-left, $base-spacing-unit);
+		@extend .centered;
+		@include rem-and-px(padding-top, $half-spacing-unit);
+		line-height: 0;
+		margin: 0;
+		@include rem-and-px(padding-left, $base-spacing-unit);			
+		&:first-child { padding-left: 0; }
+
+		&:last-child {}
 
 		&:before {}
 		&:after {}
@@ -37,10 +43,6 @@ and more scalable.
 				color: $link-hover;
 			}
 		}
-
-		&:first-child {}
-
-		&:last-child {}
 
 		/*
 		so you really have to rethink your dropdowns for mobile.
