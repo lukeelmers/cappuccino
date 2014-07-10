@@ -17,12 +17,13 @@ and more scalable.
 	text-transform: lowercase;
 	font-variant: small-caps;
 	margin: 0;
+	@include rem-and-px(padding-top, $half-spacing-unit/1.5);
 
 	li {
-		@extend .centered;
-		@include rem-and-px(padding-top, $half-spacing-unit);
+		display: inline;
 		line-height: 0;
 		margin: 0;
+
 		@include rem-and-px(padding-left, $base-spacing-unit);			
 		&:first-child { padding-left: 0; }
 
