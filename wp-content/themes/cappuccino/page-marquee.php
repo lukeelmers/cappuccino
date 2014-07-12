@@ -8,7 +8,7 @@ Template Name: Marquee Homepage
 
 			<div id="content">
 
-				<div id="inner-content" class="marquee-page wrap clearfix">
+				<div id="inner-content-marquee" class="marquee-page wrap clearfix">
 
 						<div id="main" class="clearfix" role="main">
 

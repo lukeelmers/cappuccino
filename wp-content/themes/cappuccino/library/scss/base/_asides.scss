@@ -46,29 +46,9 @@ SIDEBARS & ASIDES
 
 	/* recent-posts widget */
 	.widget_recent_entries {}
-	.widget_recent_entries ul { 
-		@include rem-and-px(font-size, 0.8rem);
-		font-style: italic;
-		font-weight: 300;		
-		color: $gray;
-	}
-	.widget_recent_entries ul li { 
-		@extend .clearfix;
-		padding: $half-spacing-unit;
-		margin-left: -$half-spacing-unit;
-		border-bottom: 2px dotted $light-gray;
-			&:last-child { border-bottom: none; }
-	}
-	.widget_recent_entries ul li a { 
-		float: right;
-		width: 75%;
-		@include rem-and-px(font-size, 1.7rem);
-		font-family: $sans-serif;
-		font-weight: 700;
-		font-style: normal;
-		text-decoration: none;
-		color: $black;
-	}
+	.widget_recent_entries ul { @extend .lists-container; }
+	.widget_recent_entries ul li { @extend .lists-item; }
+	.widget_recent_entries ul li a { @extend .lists-link; }
 
 	/* archives widget */
 	.widget_archive {}
