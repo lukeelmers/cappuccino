@@ -50,7 +50,7 @@ h4, .h4 {
 	font-weight: 400;
 	color: $white;
 	background: $black;
-	display: inline;
+	display: inline-block;
  	box-shadow: $half-spacing-unit 0 0 $black, -$half-spacing-unit 0 0 $black;
 	//@include rem-and-px(text-indent, $base-spacing-unit);
 	@include rem-and-px(margin-right, $base-spacing-unit);
