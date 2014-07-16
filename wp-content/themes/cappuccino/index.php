@@ -2,14 +2,15 @@
 
 			<div id="content">
 
-				<div class="story-cover">
+			<!--<div class="story-cover">
 					<img class="marquee-image" src="<?php echo get_template_directory_uri(); ?>/library/images/index-background.jpg" alt="Background Image Credit: Jonas Nilsson Lee" />
-				</div>
+				</div>-->
 
-				<div id="inner-content-marquee" class="marquee-page wrap clearfix">
-					
-					<h4>Articles</h4>
+				<div id="inner-content" class="wrap clearfix">
+
 						<div id="main" class="clearfix" role="main">
+
+						<h1 class="archive-title">Articles</h1>
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -51,7 +52,7 @@
 
 							<?php endif; ?>
 
-							<?php get_sidebar(); ?>				
+							<?php //get_sidebar(); ?>				
 
 						</div> <!-- end #main -->
 

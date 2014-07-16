@@ -1442,6 +1442,9 @@ POSTS & CONTENT STYLES
   
   		}*/ }
 
+#main {
+  margin-bottom: 0; }
+
 .hentry footer h4:after, .hentry footer .h4:after {
   content: '';
   display: inline; }
