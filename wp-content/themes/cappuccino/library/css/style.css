@@ -1023,8 +1023,7 @@ img {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-style: normal;
-  text-decoration: none;
-  color: #1e1e1e; }
+  text-decoration: none; }
 
 /*********************
 GENERAL STYLES
@@ -1630,12 +1629,14 @@ PAGE NAVI STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.widget ul li {
-  list-style-type: none;
-  margin-bottom: 0;
-  /* deep nesting */ }
-  .widget ul li ul {
-    padding-left: 1em; }
+.widget {
+  margin-bottom: 4.5rem; }
+  .widget ul li {
+    list-style-type: none;
+    margin-bottom: 0;
+    /* deep nesting */ }
+    .widget ul li ul {
+      padding-left: 1em; }
 
 /* links widget */
 /* meta widget */

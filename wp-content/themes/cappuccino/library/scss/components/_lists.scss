@@ -10,7 +10,7 @@
 	border-bottom: 2px dotted $light-gray;
 		&:last-child { border-bottom: none; }		
 }
-.lists-link { 
+.lists-link {
 	float: right;
 	width: 75%;
 	@include rem-and-px(font-size, 1.7rem);
@@ -18,5 +18,4 @@
 	font-weight: 700;
 	font-style: normal;
 	text-decoration: none;
-	color: $black;
 }

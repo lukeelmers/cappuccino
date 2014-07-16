@@ -14,8 +14,8 @@
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-									<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
-										<header class="lists-item">
+									<article id="post-<?php the_ID(); ?>" <?php post_class( 'lists-item clearfix' ); ?> role="article">
+										<header>
 											<a href="<?php the_permalink() ?>" class="lists-link" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 											<span class="post-date"><?php
 												printf( __( '<time class="updated" datetime="%1$s" pubdate>%2$s</time>', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( get_option('date_format')) );
