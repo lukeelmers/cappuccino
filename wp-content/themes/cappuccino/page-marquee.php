@@ -8,6 +8,11 @@ Template Name: Marquee Homepage
 
 			<div id="content">
 
+			<?php if (has_post_thumbnail( $post->ID ) ): ?>
+				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+				<div class="story-cover"><img class="marquee-image" src="<?php echo $image[0]; ?>" alt="full screen background image" /></div>
+			<?php endif; ?>			
+
 				<div id="inner-content-marquee" class="marquee-page wrap clearfix">
 
 						<div id="main" class="clearfix" role="main">
@@ -52,11 +57,6 @@ Template Name: Marquee Homepage
 						<!--<?php get_sidebar(); ?>-->
 
 				</div> <!-- end #inner-content -->
-		
-			<?php if (has_post_thumbnail( $post->ID ) ): ?>
-				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-				<div class="story-cover"><img class="marquee-image" src="<?php echo $image[0]; ?>" alt="full screen background image" /></div>
-			<?php endif; ?>
 
 			</div> <!-- end #content -->
 

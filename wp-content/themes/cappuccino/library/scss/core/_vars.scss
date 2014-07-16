@@ -36,7 +36,7 @@ $gray:				#666;
 $light-gray:		#eee;
 
 $link-color:        $gray;
-$link-hover:        darken($link-color, 9%);
+$link-hover:        lighten($link-color, 10%);
 $highlight-color:	#3299CC;
 $body-text-color:	$black;
 $body-bg-color:		$white;

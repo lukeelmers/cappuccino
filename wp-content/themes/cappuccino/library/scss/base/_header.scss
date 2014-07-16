@@ -64,14 +64,15 @@ HEADER STYLES
 	}
 
 	.story-cover {
-		position: absolute;
-		top: 0;
-		left: 0;
+		position: relative;
+		overflow: hidden;		
 		width: 100%;
-		height: 100%;
+		@include rem-and-px(height, ($base-spacing-unit * 25));
 		height: 100vh;
-		overflow: hidden;
 	}
+	/*html.cssvhunit .story-cover {
+		height: 100vh;
+	}*/
 
 		.marquee-image {
 			/* Based on Doug Neiner's technique: http://css-tricks.com/perfect-full-page-background-image/ */

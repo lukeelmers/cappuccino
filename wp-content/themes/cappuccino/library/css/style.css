@@ -122,7 +122,6 @@ dfn {
  */
 hr {
   -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -285,8 +284,6 @@ html input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -566,6 +563,8 @@ BUTTONS
   background-color: #595959;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#666666), to(#595959));
   background-image: -webkit-linear-gradient(top, #666666, #595959);
+  background-image: -moz-linear-gradient(top, #666666, #595959);
+  background-image: -o-linear-gradient(top, #666666, #595959);
   background-image: linear-gradient(to bottom, #666666, #595959); }
   .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
     color: #fcfcfc;
@@ -575,11 +574,15 @@ BUTTONS
     background-color: #4d4d4d;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#4d4d4d));
     background-image: -webkit-linear-gradient(top, #595959, #4d4d4d);
+    background-image: -moz-linear-gradient(top, #595959, #4d4d4d);
+    background-image: -o-linear-gradient(top, #595959, #4d4d4d);
     background-image: linear-gradient(to bottom, #595959, #4d4d4d); }
   .button:active, .button:visited:active {
     background-color: #666666;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#666666));
     background-image: -webkit-linear-gradient(top, #595959, #666666);
+    background-image: -moz-linear-gradient(top, #595959, #666666);
+    background-image: -o-linear-gradient(top, #595959, #666666);
     background-image: linear-gradient(to bottom, #595959, #666666); }
 
 .blue-button, .blue-button:visited {
@@ -588,19 +591,24 @@ BUTTONS
   background-color: #bfe4f4;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#d5edf8), to(#bfe4f4));
   background-image: -webkit-linear-gradient(top, #d5edf8, #bfe4f4);
+  background-image: -moz-linear-gradient(top, #d5edf8, #bfe4f4);
+  background-image: -o-linear-gradient(top, #d5edf8, #bfe4f4);
   background-image: linear-gradient(to bottom, #d5edf8, #bfe4f4);
-  -webkit-box-shadow: inset 0 0 3px white;
   box-shadow: inset 0 0 3px white; }
   .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
     border-color: #93d1ed;
     background-color: #a9daf1;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#c4e6f5), to(#a9daf1));
     background-image: -webkit-linear-gradient(top, #c4e6f5, #a9daf1);
+    background-image: -moz-linear-gradient(top, #c4e6f5, #a9daf1);
+    background-image: -o-linear-gradient(top, #c4e6f5, #a9daf1);
     background-image: linear-gradient(to bottom, #c4e6f5, #a9daf1); }
   .blue-button:active, .blue-button:visited:active {
     background-color: #d5edf8;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#bfe4f4), to(#d5edf8));
     background-image: -webkit-linear-gradient(top, #bfe4f4, #d5edf8);
+    background-image: -moz-linear-gradient(top, #bfe4f4, #d5edf8);
+    background-image: -o-linear-gradient(top, #bfe4f4, #d5edf8);
     background-image: linear-gradient(to bottom, #bfe4f4, #d5edf8); }
 
 /*********************
@@ -957,6 +965,8 @@ img {
 
 .cover-image {
   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   background-position: center; }
 
@@ -993,14 +1003,12 @@ img {
   float: right;
   margin-left: 10px; }
 
-.lists-container, .archive-list, .widget_recent_entries ul {
+.lists-item, .archive-list article, .widget_recent_entries ul li {
   font-size: 14.4px;
   font-size: 0.8rem;
   font-style: italic;
   font-weight: 300;
-  color: #666666; }
-
-.lists-item, .archive-list article, .widget_recent_entries ul li {
+  color: #666666;
   padding: 0.75rem;
   margin-left: -0.75rem;
   border-bottom: 2px dotted #eeeeee; }
@@ -1076,7 +1084,7 @@ a, a:visited {
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #4f4f4f; }
+    color: gray; }
   a:link, a:visited:link {
     /*
     this highlights links on iPhones/iPads.
@@ -1136,8 +1144,7 @@ h4, .h4 {
   font-weight: 400;
   color: #fcfcfc;
   background: #1e1e1e;
-  display: inline;
-  -webkit-box-shadow: 0.75rem 0 0 #1e1e1e, -0.75rem 0 0 #1e1e1e;
+  display: inline-block;
   box-shadow: 0.75rem 0 0 #1e1e1e, -0.75rem 0 0 #1e1e1e;
   margin-right: 27px;
   margin-right: 1.5rem;
@@ -1228,14 +1235,16 @@ HEADER STYLES
   font-size: 1.2rem; }
 
 .story-cover {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  height: 100%;
-  height: 100vh;
-  overflow: hidden; }
+  height: 675px;
+  height: 37.5rem;
+  height: 100vh; }
 
+/*html.cssvhunit .story-cover {
+	height: 100vh;
+}*/
 .marquee-image {
   /* Based on Doug Neiner's technique: http://css-tricks.com/perfect-full-page-background-image/ */
   /* Set rules to fill background */
@@ -1318,7 +1327,7 @@ and more scalable.
         font-size: 25.2px;
         font-size: 1.4rem; }
       .nav li a:hover, .nav li a:focus {
-        color: #4f4f4f; }
+        color: gray; }
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;
@@ -1392,7 +1401,7 @@ POSTS & CONTENT STYLES
   overflow: hidden;
   position: relative; }
   #content a:hover {
-    color: #4f4f4f; }
+    color: gray; }
 
 #inner-content {
   padding-top: 108px;
@@ -1406,11 +1415,22 @@ POSTS & CONTENT STYLES
       padding-top: 162px;
       padding-top: 9rem; } }
 
-.marquee-page {
-  /* Use px values & media queries for browsers that don't support vh */
-  padding-top: 675px;
-  padding-top: 37.5rem;
-  padding-top: 100vh;
+#inner-content-marquee {
+  /*@include rem-and-px(padding, $base-spacing-unit);
+  	@include rem-and-px(margin-top, ($base-spacing-unit * 25));
+  	@include rem-and-px(padding-top, ($base-spacing-unit * 1));
+  		@include breakpoint(small) { 
+  			@include rem-and-px(margin-top, ($base-spacing-unit * 20));
+  		}
+  		@include breakpoint(medium) { 
+  			@include rem-and-px(margin-top, ($base-spacing-unit * 22));
+  		}
+  		@include breakpoint(large) { 
+  			@include rem-and-px(margin-top, ($base-spacing-unit * 23));
+  		}
+  		@include breakpoint(xlarge) { 
+  			@include rem-and-px(margin-top, ($base-spacing-unit * 27));
+  		}*/
   		/*.icon-arrow-down {
   			color: $white;
   			display: block;
@@ -1421,26 +1441,6 @@ POSTS & CONTENT STYLES
   			@include rem-and-px(font-size, 1.2rem);
   
   		}*/ }
-  @media (min-width: 40em) {
-    .marquee-page {
-      padding-top: 540px;
-      padding-top: 30rem;
-      padding-top: 100vh; } }
-  @media (min-width: 65em) {
-    .marquee-page {
-      padding-top: 594px;
-      padding-top: 33rem;
-      padding-top: 100vh; } }
-  @media (min-width: 78em) {
-    .marquee-page {
-      padding-top: 621px;
-      padding-top: 34.5rem;
-      padding-top: 100vh; } }
-  @media (min-width: 85em) {
-    .marquee-page {
-      padding-top: 729px;
-      padding-top: 40.5rem;
-      padding-top: 100vh; } }
 
 .hentry footer h4:after, .hentry footer .h4:after {
   content: '';
@@ -1680,6 +1680,7 @@ COMMENT FORM STYLES
     border-color: #fbc2c4;
     background-color: #f6e7eb;
     -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     -ms-box-shadow: none;
     box-shadow: none; }
 .respond-form form textarea {
@@ -1860,7 +1861,6 @@ view.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    -webkit-filter: none !important;
     filter: none !important;
     -ms-filter: none !important; }
 
@@ -1906,5 +1906,3 @@ view.
   .respond-form,
   nav {
     display: none; } }
-
-/*# sourceMappingURL=style.css.map */

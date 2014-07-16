@@ -1,16 +1,14 @@
 // styling for lists of articles
-.lists-container { 
+.lists-item { 
+	@extend .clearfix;
 	@include rem-and-px(font-size, 0.8rem);
 	font-style: italic;
 	font-weight: 300;		
-	color: $gray;
-}
-.lists-item { 
-	@extend .clearfix;
+	color: $gray;	
 	padding: $half-spacing-unit;
 	margin-left: -$half-spacing-unit;
 	border-bottom: 2px dotted $light-gray;
-		&:last-child { border-bottom: none; }
+		&:last-child { border-bottom: none; }		
 }
 .lists-link { 
 	float: right;
