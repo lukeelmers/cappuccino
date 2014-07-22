@@ -1550,7 +1550,9 @@ POSTS & CONTENT STYLES
   padding-left: 13.5px;
   padding-left: 0.75rem;
   padding-right: 13.5px;
-  padding-right: 0.75rem; }
+  padding-right: 0.75rem;
+  margin-bottom: 27px;
+  margin-bottom: 1.5rem; }
 
 /* end .entry-content */
 .article-footer {
