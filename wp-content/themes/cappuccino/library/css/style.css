@@ -1541,18 +1541,19 @@ POSTS & CONTENT STYLES
 .entry-content video, .entry-content object {
   max-width: 100%;
   height: auto; }
-.entry-content code {
-  font-size: 15.3px;
-  font-size: 0.85rem; }
-.entry-content pre, .entry-content pre code {
-  font-size: 12.6px;
-  font-size: 0.7rem;
+.entry-content p > code {
+  font-size: 0.9em;
+  white-space: normal;
+  /* Allow text wrapping for inline code blocks */ }
+.entry-content pre {
   padding-left: 13.5px;
   padding-left: 0.75rem;
   padding-right: 13.5px;
   padding-right: 0.75rem;
   margin-bottom: 27px;
   margin-bottom: 1.5rem; }
+  .entry-content pre > code {
+    font-size: 0.9em; }
 
 /* end .entry-content */
 .article-footer {

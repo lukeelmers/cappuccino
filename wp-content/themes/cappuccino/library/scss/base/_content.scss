@@ -251,12 +251,13 @@ POSTS & CONTENT STYLES
 				height: auto;
 			}
 
-			code {
-				@include rem-and-px(font-size, 0.85rem);
+			p > code {
+				font-size: 0.9em;
+				white-space: normal; /* Allow text wrapping for inline code blocks */
 			}
 
-			pre, pre code {
-				@include rem-and-px(font-size, 0.7rem);				
+			pre {
+				& > code { font-size: 0.9em; }
 				@include rem-and-px(padding-left, $half-spacing-unit);
 				@include rem-and-px(padding-right, $half-spacing-unit);
 				@include rem-and-px(margin-bottom, $base-spacing-unit);
