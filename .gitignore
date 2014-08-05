@@ -7,6 +7,7 @@
 # Ignore everything in the root, unless specified otherwise
 /*
 !.gitignore
+!.htaccess
 !wp-content/
 !config/
 !index.php

@@ -1,0 +1,112 @@
+# ##############################################################################
+# # .htaccess                                                                  #
+# ##############################################################################
+
+# ------------------------------------------------------------------------------
+# | Wordpress                                                                  |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+
+## Hey-ho let's go!
+RewriteEngine On
+
+## Base is the URL path of the home directory
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+
+## Skip real files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+## Otherwise send it to WordPress
+RewriteRule . /index.php [L]
+
+## Make the admin still accessible from /wp-admin
+RewriteCond %{REQUEST_URI} ^/wp-admin/?(.*)
+RewriteRule .*  wordpress/wp-admin/$1 [L,R=301]
+
+</IfModule>
+
+## Protect wp-config.php
+<files wp-config.php>
+order allow,deny
+deny from all
+</files>
+
+# ------------------------------------------------------------------------------
+# | Other                                                                      |
+# ------------------------------------------------------------------------------
+
+## Turn off the normal Apache directory indexing (for privacy)
+# Options All -Indexes
+
+## Protect .htaccess - deny any users accessing a file on the site beginning with "hta"
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</Files>
+
+# ------------------------------------------------------------------------------
+# | Compression                                                                |
+# ------------------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+
+    # Force compression for mangled headers.
+    # https://developer.yahoo.com/blogs/ydn/pushing-beyond-gzipping-25601.html
+
+    <IfModule mod_setenvif.c>
+        <IfModule mod_headers.c>
+            SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+            RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+        </IfModule>
+    </IfModule>
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Mark certain resources as been compressed in order to:
+    #
+    #  1) prevent Apache from recompressing them
+    #  2) ensure that they are served with the correct
+    #     `Content-Encoding` HTTP response header
+
+    <IfModule mod_mime.c>
+        AddEncoding gzip              svgz
+    </IfModule>
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Compress all output labeled with one of the following media types.
+
+    # IMPORTANT: For Apache versions below 2.3.7 you don't need to enable
+    # `mod_filter` and can remove the `<IfModule mod_filter.c>` & `</IfModule>`
+    # lines as `AddOutputFilterByType` is still in the core directives.
+
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE "application/atom+xml" \
+                                      "application/javascript" \
+                                      "application/json" \
+                                      "application/ld+json" \
+                                      "application/manifest+json" \
+                                      "application/rss+xml" \
+                                      "application/vnd.geo+json" \
+                                      "application/vnd.ms-fontobject" \
+                                      "application/x-font-ttf" \
+                                      "application/x-web-app-manifest+json" \
+                                      "application/xhtml+xml" \
+                                      "application/xml" \
+                                      "font/opentype" \
+                                      "image/svg+xml" \
+                                      "image/x-icon" \
+                                      "text/cache-manifest" \
+                                      "text/css" \
+                                      "text/html" \
+                                      "text/plain" \
+                                      "text/vtt" \
+                                      "text/x-component" \
+                                      "text/xml"
+    </IfModule>
+
+</IfModule>
