@@ -83,6 +83,8 @@ function bones_register_sidebars() {
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
+		'before_content' => '<span class="widgetcontent">',
+		'after_content' => '</span>',		
 	));
 
 	/*
@@ -171,4 +173,191 @@ function bones_wpsearch($form) {
 } // don't remove this bracket!
 
 
-/***************** CUSTOM WIDGETS *****************/
+/***************** INSTAGRAM WIDGET *****************/
+
+// Adds Instagram_Widget widget.
+class Instagram_Widget extends WP_Widget {
+
+	// Register widget with WordPress.
+	function __construct() {
+		parent::__construct(
+			'instagram_widget', // Base ID
+			__('Instagram', 'text_domain'), // Name
+			array( 'description' => __( 'Displays your recent images from Instagram.', 'text_domain' ), ) // Args
+		);
+	}
+
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+		$title = apply_filters( 'instagram_widget', $instance['title'] );
+		$subtitle = apply_filters( 'instagram_widget', $instance['subtitle'] );
+		$key = apply_filters( 'instagram_widget', $instance['key'] );
+		$user = apply_filters( 'instagram_widget', $instance['user'] );
+		$count = apply_filters( 'instagram_widget', $instance['count'] );
+
+		echo $args['before_widget'];
+		if ( ! empty( $title ) ) {
+			echo $args['before_title'] . $title . $args['after_title'];
+		}
+		if ( ! empty( $subtitle ) ) {
+			echo $args['before_content'] . $subtitle . $args['after_content'];
+		}
+		if ( ! empty( $key ) && ! empty( $user ) && ! empty( $count )  ) {
+			
+			echo $args['before_content']; ?>
+			
+			<!-- Retrieve Instagram Photos -->
+			<script type="text/javascript">
+
+				function loadEvent(func) {
+				    // assign any pre-defined functions on 'window.onload' to a variable
+				    // thechamplord.wordpress.com/2014/07/04/using-javascript-window-onload-event-properly
+				    var oldOnLoad = window.onload;
+				    // if there is not any function hooked to it
+				    if (typeof window.onload != 'function') {
+				        // you hook the function with it
+				        window.onload = func
+				    } else {     // someone already hooked a function
+				        window.onload = function () {
+				            // call the function hooked already
+				            oldOnLoad();
+				            // then call the new function
+				            func();
+				        }
+				    }
+				}
+
+				// pass the function to call at 'window.onload', in the function defined above
+				loadEvent(function(){
+				    // code to run on window.onload
+				    function getInstagram(id, user, num) {
+				        var url = 'https://api.instagram.com/v1/users/' + user + '/media/recent?client_id=' + id + '&count=' + num;
+				        var $widgetcontent = jQuery('.widget_instagram_widget .widgetcontent:last-child');
+				        jQuery.ajax({
+				            url: url,
+				            dataType: "jsonp",
+				            success: function(json) {
+				            //console.log(json);
+				                var results = json.data.length;
+				                for (var i = 0; i < results; i++) {
+				                    var image = json.data[i].images.low_resolution.url;
+				                    var link = json.data[i].link;
+				                    var caption = json.data[i].caption.text;
+				                    $widgetcontent.append(
+				                    	  '<a href=\"' + link + '\" title=\"' + caption + '\" class=\"instagram\">'
+				                    	+ '<img src=\"' + image + '\" />'
+				                    	+ '</a>');
+				                }
+				            },
+				            error: function(jqXHR, textStatus, errorThrown) {
+				                console.error(jqXHR);
+				                console.log(textStatus);
+				                console.log(errorThrown);
+				            }
+				        });
+				    }
+				    getInstagram('<?php echo $key; ?>', '<?php echo $user; ?>', '<?php echo $count; ?>');
+				});
+
+			</script>
+
+			<?php echo $args['after_content'];
+		}		
+		echo $args['after_widget'];
+	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+		if ( isset( $instance[ 'title' ] ) ) {
+			$title = $instance[ 'title' ];
+		}
+		else {
+			$title = __( 'New title', 'text_domain' );
+		}
+		if ( isset( $instance[ 'subtitle' ] ) ) {
+			$subtitle = $instance[ 'subtitle' ];
+		}
+		if ( isset( $instance[ 'key' ] ) ) {
+			$key = $instance[ 'key' ];
+		}
+		if ( isset( $instance[ 'user' ] ) ) {
+			$user = $instance[ 'user' ];
+		}
+		if ( isset( $instance[ 'count' ] ) ) {
+			$count = $instance[ 'count' ];
+		}				
+		?>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'subtitle' ); ?>"><?php _e( 'Subtitle:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'subtitle' ); ?>" name="<?php echo $this->get_field_name( 'subtitle' ); ?>" type="text" value="<?php echo esc_attr( $subtitle ); ?>">
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'key' ); ?>"><?php _e( 'Instagram API key:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'key' ); ?>" name="<?php echo $this->get_field_name( 'key' ); ?>" type="text" value="<?php echo esc_attr( $key ); ?>">
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'user' ); ?>"><?php _e( 'Instagram User ID:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'user' ); ?>" name="<?php echo $this->get_field_name( 'user' ); ?>" type="text" value="<?php echo esc_attr( $user ); ?>">
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Number of images to display:' ); ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>">
+		</p>				
+
+		<?php 
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['subtitle'] = ( ! empty( $new_instance['subtitle'] ) ) ? strip_tags( $new_instance['subtitle'] ) : '';
+		$instance['key'] = ( ! empty( $new_instance['key'] ) ) ? strip_tags( $new_instance['key'] ) : '';
+		$instance['user'] = ( ! empty( $new_instance['user'] ) ) ? strip_tags( $new_instance['user'] ) : '';
+		$instance['count'] = ( ! empty( $new_instance['count'] ) ) ? strip_tags( $new_instance['count'] ) : '';
+
+		return $instance;
+	}
+
+} // class Instagram_Widget
+
+// register Instagram_Widget widget
+function register_instagram_widget() {
+    register_widget( 'Instagram_Widget' );
+}
+add_action( 'widgets_init', 'register_instagram_widget' );
+
+// END INSTAGRAM WIDGET
+
+?>

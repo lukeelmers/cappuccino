@@ -7,6 +7,8 @@ SIDEBARS & ASIDES
 
 	.widgettitle { @extend .clearfix; }
 
+		.widgetcontent { @extend .lists-item; }
+
 	.widget {
 
 		margin-bottom: $base-spacing-unit * 3;

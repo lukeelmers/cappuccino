@@ -8,6 +8,17 @@ img {
 	margin-right: auto;
 }
 
+// Instagram widget
+.instagram img {
+	&:hover { opacity: 0.6; } 	
+	float: left;
+	margin: 0;
+	width: 50%;
+	@include breakpoint(small) {
+		width: 32%;
+	}
+}
+
 // TODO - create full width media setting in WordPress. For now, add class manually.
 .entry-content img.size-giant {}
 

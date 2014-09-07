@@ -614,12 +614,12 @@ BUTTONS
 /*********************
 TOOLS
 *********************/
-.clearfix, .lists-item, .archive-list article, .widget_recent_entries ul li, .widgettitle {
+.clearfix, .lists-item, .archive-list article, .widgetcontent, .widget_recent_entries ul li, .widgettitle {
   zoom: 1; }
-  .clearfix:before, .lists-item:before, .archive-list article:before, .widget_recent_entries ul li:before, .widgettitle:before, .clearfix:after, .lists-item:after, .archive-list article:after, .widget_recent_entries ul li:after, .widgettitle:after {
+  .clearfix:before, .lists-item:before, .archive-list article:before, .widgetcontent:before, .widget_recent_entries ul li:before, .widgettitle:before, .clearfix:after, .lists-item:after, .archive-list article:after, .widgetcontent:after, .widget_recent_entries ul li:after, .widgettitle:after {
     content: "";
     display: table; }
-  .clearfix:after, .lists-item:after, .archive-list article:after, .widget_recent_entries ul li:after, .widgettitle:after {
+  .clearfix:after, .lists-item:after, .archive-list article:after, .widgetcontent:after, .widget_recent_entries ul li:after, .widgettitle:after {
     clear: both; }
 
 * {
@@ -963,6 +963,16 @@ img {
   margin-left: auto;
   margin-right: auto; }
 
+.instagram img {
+  float: left;
+  margin: 0;
+  width: 50%; }
+  .instagram img:hover {
+    opacity: 0.6; }
+  @media (min-width: 40em) {
+    .instagram img {
+      width: 32%; } }
+
 .cover-image {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1003,7 +1013,7 @@ img {
   float: right;
   margin-left: 10px; }
 
-.lists-item, .archive-list article, .widget_recent_entries ul li {
+.lists-item, .archive-list article, .widgetcontent, .widget_recent_entries ul li {
   font-size: 14.4px;
   font-size: 0.8rem;
   font-style: italic;
@@ -1012,7 +1022,7 @@ img {
   padding: 0.75rem;
   margin-left: -0.75rem;
   border-bottom: 2px dotted #eeeeee; }
-  .lists-item:last-child, .archive-list article:last-child, .widget_recent_entries ul li:last-child {
+  .lists-item:last-child, .archive-list article:last-child, .widgetcontent:last-child, .widget_recent_entries ul li:last-child {
     border-bottom: none; }
 
 .lists-link, .archive-list article a, .widget_recent_entries ul li a {
