@@ -249,7 +249,12 @@ class Instagram_Widget extends WP_Widget {
 				                for (var i = 0; i < results; i++) {
 				                    var image = json.data[i].images.low_resolution.url;
 				                    var link = json.data[i].link;
-				                    var caption = json.data[i].caption.text;
+				                    var caption;
+								    if (json.data[i].caption !== null) {
+										caption = json.data[i].caption.text;
+								    } else {
+										caption = 'Instagram Image';
+		       						}
 				                    $widgetcontent.append(
 				                    	  '<a href=\"' + link + '\" title=\"' + caption + '\" class=\"instagram\">'
 				                    	+ '<img src=\"' + image + '\" />'
