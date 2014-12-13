@@ -55,7 +55,7 @@ Template Name: Marquee Homepage
 
 						</div> <!-- end #main -->
 
-						<?php get_sidebar(); ?>
+						<?php get_sidebar('homepage-widgets'); ?>
 
 				</div> <!-- end #inner-content -->
 

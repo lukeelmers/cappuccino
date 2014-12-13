@@ -2,7 +2,7 @@
 
 			<div id="content">
 
-				<div id="inner-content" class="clearfix">
+				<div id="inner-content" class="clearfix wrap">
 
 					<div id="main" class="clearfix" role="main">
 
@@ -65,7 +65,7 @@
 
 					</div> <!-- end #main -->
 
-					<?php //get_sidebar(); ?>
+					<?php get_sidebar('post-widgets'); ?>
 
 				</div> <!-- end #inner-content -->
 

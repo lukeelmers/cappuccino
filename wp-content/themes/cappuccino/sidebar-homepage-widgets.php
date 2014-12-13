@@ -1,8 +1,8 @@
-				<div id="sidebar" class="sidebar clearfix" role="complementary">
+				<div id="homepage-widgets" class="sidebar clearfix" role="complementary">
 
-					<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
+					<?php if ( is_active_sidebar( 'homepage-widgets' ) ) : ?>
 
-						<?php dynamic_sidebar( 'sidebar' ); ?>
+						<?php dynamic_sidebar( 'homepage-widgets' ); ?>
 
 					<?php else : ?>
 

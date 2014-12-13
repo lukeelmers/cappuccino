@@ -75,10 +75,23 @@ you like. Enjoy!
 
 // Sidebars & Widgetizes Areas
 function bones_register_sidebars() {
+
 	register_sidebar(array(
 		'id' => 'homepage-widgets',
 		'name' => __( 'Homepage Widgets', 'bonestheme' ),
 		'description' => __( 'Widgets that display on the homepage.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+		'before_content' => '<span class="widgetcontent">',
+		'after_content' => '</span>',		
+	));
+
+	register_sidebar(array(
+		'id' => 'post-widgets',
+		'name' => __( 'Post Widgets', 'bonestheme' ),
+		'description' => __( 'Widgets that display on post pages.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
