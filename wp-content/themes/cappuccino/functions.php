@@ -224,69 +224,13 @@ class Instagram_Widget extends WP_Widget {
 		}
 		if ( ! empty( $key ) && ! empty( $user ) && ! empty( $count )  ) {
 			
-			echo $args['before_content']; ?>
+			echo $args['before_content'];
 			
-			<!-- Retrieve Instagram Photos -->
-			<script type="text/javascript">
+			echo '<input type="hidden" id="insta-key" value="' . $key . '" />';
+            echo '<input type="hidden" id="insta-user" value="' . $user . '" />';
+            echo '<input type="hidden" id="insta-count" value="' . $count . '" />';
 
-				function loadEvent(func) {
-				    // assign any pre-defined functions on 'window.onload' to a variable
-				    // thechamplord.wordpress.com/2014/07/04/using-javascript-window-onload-event-properly
-				    var oldOnLoad = window.onload;
-				    // if there is not any function hooked to it
-				    if (typeof window.onload != 'function') {
-				        // you hook the function with it
-				        window.onload = func
-				    } else {     // someone already hooked a function
-				        window.onload = function () {
-				            // call the function hooked already
-				            oldOnLoad();
-				            // then call the new function
-				            func();
-				        }
-				    }
-				}
-
-				// pass the function to call at 'window.onload', in the function defined above
-				loadEvent(function(){
-				    // code to run on window.onload
-				    function getInstagram(id, user, num) {
-				        var url = 'https://api.instagram.com/v1/users/' + user + '/media/recent?client_id=' + id + '&count=' + num;
-				        var $widgetcontent = jQuery('.widget_instagram_widget .widgetcontent:last-child');
-				        jQuery.ajax({
-				            url: url,
-				            dataType: "jsonp",
-				            success: function(json) {
-				            //console.log(json);
-				                var results = json.data.length;
-				                for (var i = 0; i < results; i++) {
-				                    var image = json.data[i].images.low_resolution.url;
-				                    var link = json.data[i].link;
-				                    var caption;
-								    if (json.data[i].caption !== null) {
-										caption = json.data[i].caption.text;
-								    } else {
-										caption = 'Instagram Image';
-		       						}
-				                    $widgetcontent.append(
-				                    	  '<a href=\"' + link + '\" title=\"' + caption + '\" class=\"instagram\">'
-				                    	+ '<img src=\"' + image + '\" />'
-				                    	+ '</a>');
-				                }
-				            },
-				            error: function(jqXHR, textStatus, errorThrown) {
-				                console.error(jqXHR);
-				                console.log(textStatus);
-				                console.log(errorThrown);
-				            }
-				        });
-				    }
-				    getInstagram('<?php echo $key; ?>', '<?php echo $user; ?>', '<?php echo $count; ?>');
-				});
-
-			</script>
-
-			<?php echo $args['after_content'];
+			echo $args['after_content'];
 		}		
 		echo $args['after_widget'];
 	}

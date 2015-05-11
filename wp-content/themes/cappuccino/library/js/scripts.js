@@ -11,20 +11,20 @@ slow the page load.
 
 // IE8 ployfill for GetComputed Style (for Responsive Script below)
 if (!window.getComputedStyle) {
-    window.getComputedStyle = function(el, pseudo) {
+    window.getComputedStyle = function(el) {
         this.el = el;
         this.getPropertyValue = function(prop) {
             var re = /(\-([a-z]){1})/g;
-            if (prop == 'float') prop = 'styleFloat';
+            if (prop == 'float') { prop = 'styleFloat'; }
             if (re.test(prop)) {
                 prop = prop.replace(re, function () {
                     return arguments[2].toUpperCase();
                 });
             }
             return el.currentStyle[prop] ? el.currentStyle[prop] : null;
-        }
+        };
         return this;
-    }
+    };
 }
 
 // as the page loads, call these scripts
@@ -68,8 +68,47 @@ jQuery(document).ready(function($) {
 	// add all your scripts here
 
     // Buggyfill for viewport units in iOS7
-    window.viewportUnitsBuggyfill.init();
-    
+    //window.viewportUnitsBuggyfill.init();
+
+    // Ajax call for Instagram images
+
+    function getInstagram(id, user, num) {
+        var url = 'https://api.instagram.com/v1/users/' + user + '/media/recent?client_id=' + id + '&count=' + num;
+        var $widgetcontent = jQuery('.widget_instagram_widget .widgetcontent:last-child');
+
+        jQuery.ajax({
+            url: url,
+            dataType: 'jsonp'
+        })
+            .done(function(json) {
+                for (var i = 0; i < json.data.length; i++) {
+                    var image = json.data[i].images.low_resolution.url;
+                    var link = json.data[i].link;
+                    var caption = (json.data[i].caption !== null) ? json.data[i].caption.text : 'Instagram Image';
+                    $widgetcontent.append(
+                          '<a href=\"' + link + '\" title=\"' + caption + '\" class=\"instagram\">' +
+                          '<img src=\"' + image + '\" />' + 
+                          '</a>'
+                    );
+                }        
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+                $widgetcontent.append('<p>' + 'Sorry, but we are unable to retrieve images from Instagram at this time.' + '</p>');
+            });
+    }
+
+    var $key = jQuery('#insta-key');
+    var $user = jQuery('#insta-user');
+    var $count = jQuery('#insta-count');
+
+    getInstagram($key.val(), $user.val(), $count.val());
+
+    $key.remove();
+    $user.remove();
+    $count.remove();
  
 }); /* end of as page load scripts */
 
